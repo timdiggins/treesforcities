@@ -4,8 +4,6 @@
   <tr>
     <th>Tree no</th>
     <th>Date planted</th>
-    <th>Priority</th>
-    <th>Action</th>
     <th>Project</th>
     <th>Site street</th>
     <th>Exact loc</th>
@@ -14,17 +12,12 @@
     <th>Ward</th>
     <th>Species</th>
     <th>Common name</th>
-    <th>Postcode</th>
-    <th>Geo x</th>
-    <th>Geo y</th>
   </tr>
 
 <% @trees.each do |tree| %>
   <tr>
     <td><%=h tree.tree_no %></td>
     <td><%=h tree.date_planted %></td>
-    <td><%=h tree.priority %></td>
-    <td><%=h tree.action %></td>
     <td><%=h tree.project %></td>
     <td><%=h tree.site_street %></td>
     <td><%=h tree.exact_loc %></td>
@@ -33,9 +26,6 @@
     <td><%=h tree.ward %></td>
     <td><%=h tree.species %></td>
     <td><%=h tree.common_name %></td>
-    <td><%=h tree.postcode %></td>
-    <td><%=h tree.geo_x %></td>
-    <td><%=h tree.geo_y %></td>
     <td><%= link_to 'Show', tree %></td>
     <td><%= link_to 'Edit', edit_tree_path(tree) %></td>
     <td><%= link_to 'Destroy', tree, :confirm => 'Are you sure?', :method => :delete %></td>
