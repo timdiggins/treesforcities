@@ -53,11 +53,18 @@ table {
 }
 
 
+#wrap {
+	width:940px;
+	margin:0 auto;
+}
 
 
 
-
-
+form {
+	padding:1em;
+	background:#EEE;
+	border:1px solid #DDD;
+}
 
 
 form p {

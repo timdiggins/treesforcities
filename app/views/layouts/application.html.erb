@@ -8,16 +8,18 @@
   <%= stylesheet_link_tag 'trees' %>
 </head>
 <body>
-
-
-<ul id="navigation">
-  <li><%= link_to 'Overview', "/" %></li>
-  <li><%= link_to 'Lots', lots_path %></li>
-  <li>(<%= link_to 'Trees', trees_path %>)</li>
-</ul>
-<p style="color: green"><%= flash[:notice] %></p>
   
-<%= yield %>
+<div id="wrap">
 
+
+  <ul id="navigation">
+    <li><%= link_to 'Overview', "/" %></li>
+    <li><%= link_to 'Lots', lots_path %></li>
+    <li>(<%= link_to 'Trees', trees_path %>)</li>
+  </ul>
+  <p style="color: green"><%= flash[:notice] %></p>
+  
+  <%= yield %>
+</div>
 </body>
 </html>
