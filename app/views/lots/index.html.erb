@@ -1,0 +1,30 @@
+<h1>Listing lots</h1>
+
+<table>
+  <tr>
+    <th>Project</th>
+    <th>Site street</th>
+    <th>Exact loc</th>
+    <th>Land ownership</th>
+    <th>Borough</th>
+    <th>Ward</th>
+  </tr>
+
+<% @lots.each do |lot| %>
+  <tr>
+    <td><%=h lot.project %></td>
+    <td><%=h lot.site_street %></td>
+    <td><%=h lot.exact_loc %></td>
+    <td><%=h lot.land_ownership %></td>
+    <td><%=h lot.borough %></td>
+    <td><%=h lot.ward %></td>
+    <td><%= link_to 'Show', lot %></td>
+    <td><%= link_to 'Edit', edit_lot_path(lot) %></td>
+    <td><%= link_to 'Destroy', lot, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New lot', new_lot_path %>

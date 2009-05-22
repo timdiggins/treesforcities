@@ -1,0 +1,47 @@
+<p>
+  <b>Project:</b>
+  <%=h @lot.project %>
+</p>
+
+<p>
+  <b>Site street:</b>
+  <%=h @lot.site_street %>
+</p>
+
+<p>
+  <b>Exact loc:</b>
+  <%=h @lot.exact_loc %>
+</p>
+
+<p>
+  <b>Land ownership:</b>
+  <%=h @lot.land_ownership %>
+</p>
+
+<p>
+  <b>Borough:</b>
+  <%=h @lot.borough %>
+</p>
+
+<p>
+  <b>Ward:</b>
+  <%=h @lot.ward %>
+</p>
+
+<p>
+  <b>Postcode:</b>
+  <%=h @lot.postcode %>
+</p>
+
+<p>
+  <b>Geo x:</b>
+  <%=h @lot.geo_x %>
+</p>
+
+<p>
+  <b>Geo y:</b>
+  <%=h @lot.geo_y %>
+</p>
+
+<%= link_to 'Edit', edit_lot_path(@lot) %> |
+<%= link_to 'Back', lots_path %>

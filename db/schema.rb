@@ -9,7 +9,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090522152824) do
+ActiveRecord::Schema.define(:version => 20090522160438) do
+
+  create_table "lots", :force => true do |t|
+    t.string   "project"
+    t.string   "site_street"
+    t.string   "exact_loc"
+    t.string   "land_ownership"
+    t.string   "borough"
+    t.string   "ward"
+    t.string   "postcode"
+    t.float    "geo_x"
+    t.float    "geo_y"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "trees", :force => true do |t|
     t.string   "tree_no"
