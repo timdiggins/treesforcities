@@ -1,30 +1,21 @@
-<h1>Listing lots</h1>
+<h1>Lots</h1>
 
-<table>
-  <tr>
-    <th>Project</th>
-    <th>Site street</th>
-    <th>Exact loc</th>
-    <th>Land ownership</th>
-    <th>Borough</th>
-    <th>Ward</th>
-  </tr>
+<ul class="lots">
 
 <% @lots.each do |lot| %>
-  <tr>
-    <td><%=h lot.project %></td>
-    <td><%=h lot.site_street %></td>
-    <td><%=h lot.exact_loc %></td>
-    <td><%=h lot.land_ownership %></td>
-    <td><%=h lot.borough %></td>
-    <td><%=h lot.ward %></td>
-    <td><%= link_to 'Show', lot %></td>
-    <td><%= link_to 'Edit', edit_lot_path(lot) %></td>
-    <td><%= link_to 'Destroy', lot, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <li>
+    <h2><%=h lot.id %>: <%=h lot.project %></h2>
+    <p>Street: <%=h lot.site_street %></p>
+    <p>Location: <%=h lot.exact_loc %></p>
+    <p>Borough: <%=h lot.borough %>, Ward: <%=h lot.ward %></p>
+    <p>owned by: <%=h lot.land_ownership %></p>
+    <p class="options">
+      <%= link_to 'Show', lot %>
+      <%= link_to 'Edit', edit_lot_path(lot) %>
+      <%= link_to 'Destroy', lot, :confirm => 'Are you sure?', :method => :delete %>
+    </p>
+  </li>
 <% end %>
-</table>
+</ul>
 
-<br />
-
-<%= link_to 'New lot', new_lot_path %>
+<p><%= link_to 'New lot', new_lot_path %></p>

@@ -53,9 +53,44 @@ table {
 }
 
 
+
+
+
+
+h1 {
+	font-size:1.5em;
+	margin:1em 0;
+}
+
+h2 {
+	margin:1em 0;
+}
+
+
 #wrap {
 	width:940px;
 	margin:0 auto;
+}
+
+.lots {
+	border-bottom:2px dashed #DDD;
+	margin-bottom:2em;
+}
+
+
+.lots li {
+	border-top:2px dashed #DDD;
+	padding:0 0 1em 0;
+}
+
+
+
+p.options {
+	margin-top:1em;
+}
+
+p.options a {
+	margin-right:0.3em;
 }
 
 
@@ -104,21 +139,9 @@ form input {
 
 
 
-body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
-  line-height: 18px;
-}
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
-}
 
-a { }
-a:visited { }
-a:hover {}
+
 
 .fieldWithErrors {
   padding: 2px;
