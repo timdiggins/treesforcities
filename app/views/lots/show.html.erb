@@ -43,6 +43,8 @@
   <%=h @lot.geo_y %>
 </p>
 
+<p><%= link_to "Create a tree in this Lot", new_tree_path(:lot_id=> @lot) %></p>
+
 <% if  @lot.tree.nil?%>
   <p>There is no tree in this lot, yet</p>
 <% else %>
@@ -51,7 +53,6 @@
 	  <%= render :partial=>'trees/tree', :object=>@lot.tree%>
 	</ul>
 <% end %>
-<p><%= link_to "Create a tree in this Lot", new_tree_path(:lot_id=> @lot) %></p>
 <p class="options">
   <%= link_to 'Edit this Lot', edit_lot_path(@lot) %>
   <%= link_to 'Delete this Lot', @lot, :confirm => 'Are you sure?', :method => :delete %>
