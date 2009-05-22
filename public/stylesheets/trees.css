@@ -20,6 +20,7 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 body {
 	line-height: 1;
+	font-family:arial, sans-serif;
 }
 ol, ul {
 	list-style: none;
