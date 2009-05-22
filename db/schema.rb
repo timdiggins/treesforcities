@@ -9,13 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090522143614) do
+ActiveRecord::Schema.define(:version => 20090522152824) do
 
   create_table "trees", :force => true do |t|
     t.string   "tree_no"
     t.date     "date_planted"
-    t.string   "priority"
-    t.string   "action"
     t.string   "project"
     t.string   "site_street"
     t.string   "exact_loc"
