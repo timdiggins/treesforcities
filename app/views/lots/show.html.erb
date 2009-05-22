@@ -52,7 +52,9 @@
 	</ul>
 <% end %>
 <p class="options">
-  <%= link_to 'Edit', edit_lot_path(@lot) %>
-  <%= link_to 'Destroy', @lot, :confirm => 'Are you sure?', :method => :delete %>
+  <%= link_to "Create tree", new_tree_path(:lot_id=> @lot) %>
+  <%= link_to 'Edit this Lot', edit_lot_path(@lot) %>
+  <%= link_to 'Delete this Lot', @lot, :confirm => 'Are you sure?', :method => :delete %>
 </p>
 <p><%= link_to 'Back', lots_path %></p>
+

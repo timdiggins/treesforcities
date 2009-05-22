@@ -24,7 +24,11 @@ class TreesController < ApplicationController
   # GET /trees/new
   # GET /trees/new.xml
   def new
-    @tree = Tree.new
+    lot_id = params[:lot_id]
+    if lot_id.nil? 
+      raise Exception.new("Tree needs a lot")
+    end
+    @tree = Tree.new(:lot_id => lot_id)
 
     respond_to do |format|
       format.html # new.html.erb
@@ -41,11 +45,11 @@ class TreesController < ApplicationController
   # POST /trees.xml
   def create
     @tree = Tree.new(params[:tree])
-
+ 
     respond_to do |format|
       if @tree.save
         flash[:notice] = 'Tree was successfully created.'
-        format.html { redirect_to(@tree) }
+        format.html { redirect_to(lot_path(:id=>@tree.lot_id)) }
         format.xml  { render :xml => @tree, :status => :created, :location => @tree }
       else
         format.html { render :action => "new" }
