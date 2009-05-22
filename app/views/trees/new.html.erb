@@ -4,6 +4,8 @@
   <%= form.error_messages %>
 
   <%= render :partial=>'form', :object=>form%>
+
+  <%= form.hidden_field :lot_id %>  
   <p>
     <%= form.submit 'Create' %>
   </p>

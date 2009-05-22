@@ -44,10 +44,11 @@
 </p>
 
 <% if  @lot.tree.nil?%>
-  <p>No tree</p>
+  <p>No tree: <%= link_to "Create tree", new_tree_path(:lot_id=> @lot) %></p>
 <% else %>
 	<h2>Tree</h2>
 	<%= render :partial=>'trees/tree', :object=>@lot.tree%>
 <% end %>
+
 <%= link_to 'Edit', edit_lot_path(@lot) %> |
 <%= link_to 'Back', lots_path %>

@@ -3,33 +3,11 @@
 one:
   tree_no: MyString
   date_planted: 2009-05-22
-  priority: MyString
-  action: MyString
-  project: MyString
-  site_street: MyString
-  exact_loc: MyString
-  land_ownership: MyString
-  borough: MyString
-  ward: MyString
   species: MyString
   common_name: MyString
-  postcode: MyString
-  geo_x: 1.5
-  geo_y: 1.5
 
 two:
-  tree_no: MyString
-  date_planted: 2009-05-22
-  priority: MyString
-  action: MyString
-  project: MyString
-  site_street: MyString
-  exact_loc: MyString
-  land_ownership: MyString
-  borough: MyString
-  ward: MyString
+  tree_no: MyString2
+  date_planted: 2009-05-23
   species: MyString
   common_name: MyString
-  postcode: MyString
-  geo_x: 1.5
-  geo_y: 1.5

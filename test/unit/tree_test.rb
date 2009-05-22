@@ -1,8 +1,10 @@
 require 'test_helper'
 
 class TreeTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "validates needs lot" do
+    t = Tree.new()
+    success = t.save
+    assert !success, "should fail because lot_id is nil"
   end
 end
+
