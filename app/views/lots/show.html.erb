@@ -43,5 +43,11 @@
   <%=h @lot.geo_y %>
 </p>
 
+<% if  @lot.tree.nil?%>
+  <p>No tree</p>
+<% else %>
+	<h2>Tree</h2>
+	<%= render :partial=>'trees/tree', :object=>@lot.tree%>
+<% end %>
 <%= link_to 'Edit', edit_lot_path(@lot) %> |
 <%= link_to 'Back', lots_path %>
