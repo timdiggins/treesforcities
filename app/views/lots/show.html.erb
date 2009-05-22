@@ -50,5 +50,15 @@
 	<%= render :partial=>'trees/tree', :object=>@lot.tree%>
 <% end %>
 
+<h2>Comments</h2>
+<% @lot.comments.each do |comment| %>
+  <div>
+	<p><%=h(comment.text)%></p>
+	<p><%=h(comment.author)%></p>	
+	<p><%=time_ago_in_words(comment.created_at)%></p>	
+  </div>
+<% end %>
+
+
 <%= link_to 'Edit', edit_lot_path(@lot) %> |
 <%= link_to 'Back', lots_path %>
