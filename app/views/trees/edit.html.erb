@@ -1,0 +1,12 @@
+<h1>Editing tree</h1>
+
+<% form_for(@tree) do |f| %>
+  <%= f.error_messages %>
+  <%= render :template => 'form'%>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @tree %> |
+<%= link_to 'Back', trees_path %>

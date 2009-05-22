@@ -1,0 +1,10 @@
+.tmp_*
+*.tmproj
+log/*.log
+.tm_last_run_ruby*
+.DS_Store
+tmp/*
+test/tmp
+db/*.sqlite3
+.loadpath
+.project
