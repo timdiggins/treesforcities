@@ -1,20 +1,11 @@
-<p>
-  <b>Tree no:</b>
-  <%=h tree.tree_no %>
-</p>
-
-<p>
-  <b>Date planted:</b>
-  <%=h tree.date_planted %>
-</p>
+<li>
+  
+  <h3><%=h tree.common_name %> (<%=h tree.tree_no %>)</h3>
+  <p>(<%=h tree.species %>)</p>
+  <p>
+    planted: <%=h tree.date_planted %>
+  </p>
 
 
-<p>
-  <b>Species:</b>
-  <%=h tree.species %>
-</p>
 
-<p>
-  <b>Common name:</b>
-  <%=h tree.common_name %>
-</p>
+</li>

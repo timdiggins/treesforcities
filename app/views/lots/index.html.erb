@@ -4,16 +4,11 @@
 
 <% @lots.each do |lot| %>
   <li>
-    <h2><%=h lot.id %>: <%=h lot.project %></h2>
+    <h2><%= link_to lot.project, lot %> (<%=h lot.id %>)</h2>
     <p>Street: <%=h lot.site_street %></p>
     <p>Location: <%=h lot.exact_loc %></p>
     <p>Borough: <%=h lot.borough %>, Ward: <%=h lot.ward %></p>
     <p>owned by: <%=h lot.land_ownership %></p>
-    <p class="options">
-      <%= link_to 'Show', lot %>
-      <%= link_to 'Edit', edit_lot_path(lot) %>
-      <%= link_to 'Destroy', lot, :confirm => 'Are you sure?', :method => :delete %>
-    </p>
   </li>
 <% end %>
 </ul>
