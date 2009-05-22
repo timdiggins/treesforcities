@@ -71,6 +71,7 @@ h2 {
 #wrap {
 	width:940px;
 	margin:0 auto;
+	padding:0 1em;
 }
 
 .lots {
@@ -87,7 +88,7 @@ h2 {
 
 
 p.options {
-	margin-top:1em;
+	margin:1em 0;
 }
 
 p.options a {
