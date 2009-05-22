@@ -5,12 +5,16 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Trees: <%= controller.action_name %></title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'trees' %>
 </head>
 <body>
 
 <p style="color: green"><%= flash[:notice] %></p>
-
+<ul id="navigation">
+  <li><%= link_to 'Home', "/" %></li>
+  <li><%= link_to 'Trees', trees_path %></li>
+</ul>
+  
 <%= yield %>
 
 </body>
