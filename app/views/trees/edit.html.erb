@@ -1,10 +1,10 @@
 <h1>Editing tree</h1>
 
-<% form_for(@tree) do |f| %>
-  <%= f.error_messages %>
-  <%= render :template => 'form'%>
+<% form_for(@tree) do |form| %>
+  <%= form.error_messages %>
+  <%= render :partial=>'form', :object=>form%>
   <p>
-    <%= f.submit 'Update' %>
+    <%= form.submit 'Update' %>
   </p>
 <% end %>
 
