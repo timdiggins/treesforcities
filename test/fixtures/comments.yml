@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  lot_id: 1
+  text: MyText
+  author: MyString
+
+two:
+  lot_id: 1
+  text: MyText
+  author: MyString

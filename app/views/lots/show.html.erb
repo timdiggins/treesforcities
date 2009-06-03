@@ -47,6 +47,8 @@
 
 <% if  @lot.tree.nil?%>
   <p>There is no tree in this lot, yet</p>
+	<p><%= link_to "Create a tree in this Lot", new_tree_path(:lot_id=> @lot) %></p>
+
 <% else %>
 	<h2>Tree</h2>
 	<ul cass="trees">
@@ -59,3 +61,11 @@
 </p>
 <p><%= link_to 'Back', lots_path %></p>
 
+<h2>Comments</h2>
+<% @lot.comments.each do |comment| %>
+  <div>
+  <p><%=h(comment.text)%></p>
+  <p><%=h(comment.author)%></p> 
+  <p><%=time_ago_in_words(comment.created_at)%></p> 
+  </div>
+<% end %>
