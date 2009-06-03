@@ -45,15 +45,15 @@
 
 <% if  @lot.tree.nil?%>
   <p>There is no tree in this lot, yet</p>
+	<p><%= link_to "Create a tree in this Lot", new_tree_path(:lot_id=> @lot) %></p>
+
 <% else %>
 	<h2>Tree</h2>
 	<ul cass="trees">
 	  <%= render :partial=>'trees/tree', :object=>@lot.tree%>
 	</ul>
 <% end %>
-
 <p class="options">
-  <%= link_to "Create tree", new_tree_path(:lot_id=> @lot) %>
   <%= link_to 'Edit this Lot', edit_lot_path(@lot) %>
   <%= link_to 'Delete this Lot', @lot, :confirm => 'Are you sure?', :method => :delete %>
 </p>
@@ -67,5 +67,3 @@
   <p><%=time_ago_in_words(comment.created_at)%></p> 
   </div>
 <% end %>
-
-
