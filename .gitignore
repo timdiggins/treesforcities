@@ -8,3 +8,4 @@ test/tmp
 db/*.sqlite3
 .loadpath
 .project
+public/.integration_test*

@@ -36,6 +36,7 @@ end
 task :link_shared_stuff do
   run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
   run "ln -nfs #{shared_path}/config/cookie_secret #{release_path}/config/cookie_secret"
+  run "ln -nfs #{shared_path}/config/initializers/site_keys.rb #{release_path}/config/initializers/site_keys.rb"
   #run "ln -nfs #{shared_path}/avatars #{release_path}/public/avatars"
 #  run "ln -nfs #{shared_path}/config/amazon_s3.yml #{current_path}/config/amazon_s3.yml"
   
