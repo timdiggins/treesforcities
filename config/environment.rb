@@ -40,5 +40,5 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
   config.gem "redgreen", :version => '1.2.2' unless ENV['TM_MODE']
   config.gem "colored", :version => '1.1'
-
+  #config.gem "rubyist-aasm", :lib => "aasm", :source => "http://gems.github.com", :version => '2.0.5'
 end
