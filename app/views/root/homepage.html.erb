@@ -1,4 +1,4 @@
-<h1>Welcome page</h1>
+<h1>Treemap</h1>
 
 <div id="map" style="width:500px; height:300px;"></div>
 
@@ -60,9 +60,8 @@
 	window.onunload=GUnload;
 </script>
 
-<h2>Lots:</h2>
+<!--<h2>Debugging stuff:</h2>
 <ul>
-
 <% @lots.each do |lot|%>
   <li>
   	<%= link_to"##{lot.id}", lot_path(lot)%>
@@ -72,3 +71,4 @@
 
 </ul>
   <code>var lots = <%= h(@lots.to_json) %>;</code>
+-->
