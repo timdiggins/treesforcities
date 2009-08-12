@@ -9,3 +9,4 @@ db/*.sqlite3
 .loadpath
 .project
 public/.integration_test*
+doc/localnotes
