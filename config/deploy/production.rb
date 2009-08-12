@@ -1,6 +1,6 @@
 #require 'spacesuit/recipes/backup'
 
-set :domain, "80.68.89.83"
+set :domain, "tfc.vm.bytemark.co.uk"
 
 set :user, 'root'
 set :deploy_to, "/var/www/apps/#{application}_production"
@@ -66,7 +66,7 @@ end
 #end
 
 after "deploy:symlink", "link_shared_stuff"
-#after "deploy:symlink", "install_gem_dependencies"
+after "deploy:symlink", "install_gem_dependencies"
 before "deploy:update_code", "deploy:git:pending"
 #before "deploy:migrate", "backup_to_s3"
 #before "backup_to_s3", "link_s3_yml"

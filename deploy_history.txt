@@ -150,3 +150,48 @@ I deployed the latest. It includes:
 http://80.68.89.83/
 
 ##############################################
+##############################################
+
+Deployment to PRODUCTION (83df106)
+I deployed the latest. It includes:
+
+* adding spec stuff (though restful_authenticated generated specs not working fully - don't understand rspec well enough to debug)  (Tim Diggins)
+* integration of restful_authentication (probably with some wrong options)  (Tim Diggins)
+* setting up rspec  (Tim Diggins)
+* adding project file for eclipse radrails  (Tim Diggins)
+* got it deployable with cap  (Tim Diggins)
+
+
+http://80.68.89.83/
+
+##############################################
+##############################################
+
+Deployment to PRODUCTION (83df106)
+I deployed the latest. It includes:
+
+* adding spec stuff (though restful_authenticated generated specs not working fully - don't understand rspec well enough to debug)  (Tim Diggins)
+* integration of restful_authentication (probably with some wrong options)  (Tim Diggins)
+* setting up rspec  (Tim Diggins)
+* adding project file for eclipse radrails  (Tim Diggins)
+* got it deployable with cap  (Tim Diggins)
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################
+##############################################
+
+Deployment to PRODUCTION (83df106)
+I deployed the latest. It includes:
+
+* adding spec stuff (though restful_authenticated generated specs not working fully - don't understand rspec well enough to debug)  (Tim Diggins)
+* integration of restful_authentication (probably with some wrong options)  (Tim Diggins)
+* setting up rspec  (Tim Diggins)
+* adding project file for eclipse radrails  (Tim Diggins)
+* got it deployable with cap  (Tim Diggins)
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################
