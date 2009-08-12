@@ -2,7 +2,7 @@
 
 set :domain, "tfc.vm.bytemark.co.uk"
 
-set :user, 'root'
+set :user, 'treemap'
 set :deploy_to, "/var/www/apps/#{application}_production"
 
 set :keep_db_backups, 100
@@ -25,7 +25,7 @@ end
 
 task :install_gem_dependencies do
   run "cd #{current_path} && 
-        rake gems RAILS_ENV=#{rails_env} > /dev/null &&
+        Arake gems RAILS_ENV=#{rails_env} > /dev/null &&
         sudo rake gems:install RAILS_ENV=#{rails_env}"
 end
 

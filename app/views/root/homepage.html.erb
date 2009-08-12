@@ -19,9 +19,9 @@
     function createMarker(latlng, lot) {
       var icon =  new GIcon(G_DEFAULT_ICON);
       if (lot.tree_id == null) {
-	  	icon.image = "<%=url_for '/icons/lot.png' %>";
+	  	icon.image = "<%=url_for '/images/icons/lot.png' %>";
 	  } else {
-			icon.image = "<%=url_for '/icons/tree.png' %>";
+			icon.image = "<%=url_for '/images/icons/tree.png' %>";
 		}
       var marker = new GMarker(latlng,icon);
       var html="<strong><a href='/lots/"+lot.id+"'>Lot #"+lot.id+"</a></strong><br />"+lot.nearest_address;
