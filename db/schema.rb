@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090812091802) do
+ActiveRecord::Schema.define(:version => 20090812135333) do
 
   create_table "comments", :force => true do |t|
     t.integer  "lot_id"
@@ -20,15 +20,11 @@ ActiveRecord::Schema.define(:version => 20090812091802) do
   end
 
   create_table "lots", :force => true do |t|
-    t.string   "project"
-    t.string   "site_street"
-    t.string   "exact_loc"
-    t.string   "land_ownership"
-    t.string   "borough"
-    t.string   "ward"
+    t.string   "nearest_address"
+    t.string   "how_to_find"
     t.string   "postcode"
-    t.float    "geo_x"
-    t.float    "geo_y"
+    t.float    "lat"
+    t.float    "lng"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tree_id"
@@ -37,17 +33,7 @@ ActiveRecord::Schema.define(:version => 20090812091802) do
   create_table "trees", :force => true do |t|
     t.string   "tree_no"
     t.date     "date_planted"
-    t.string   "project"
-    t.string   "site_street"
-    t.string   "exact_loc"
-    t.string   "land_ownership"
-    t.string   "borough"
-    t.string   "ward"
-    t.string   "species"
-    t.string   "common_name"
     t.string   "postcode"
-    t.float    "geo_x"
-    t.float    "geo_y"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "lot_id"

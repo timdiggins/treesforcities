@@ -1,23 +1,15 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  project: MyString
-  site_street: MyString
-  exact_loc: MyString
-  land_ownership: MyString
-  borough: MyString
-  ward: MyString
+  nearest_address: MyString
+  how_to_find: MyString
   postcode: MyString
-  geo_x: 1.5
-  geo_y: 1.5
+  lat: 1.5
+  lng: 1.5
 
 two:
-  project: MyString
-  site_street: MyString
-  exact_loc: MyString
-  land_ownership: MyString
-  borough: MyString
-  ward: MyString
+  nearest_address: MyString
+  how_to_find: MyString
   postcode: MyString
-  geo_x: 1.5
-  geo_y: 1.5
+  lat: 1.5
+  lng: 1.5

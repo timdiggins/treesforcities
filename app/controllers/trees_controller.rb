@@ -28,7 +28,9 @@ class TreesController < ApplicationController
     if lot_id.nil? 
       raise Exception.new("Tree needs a lot")
     end
-    @tree = Tree.new(:lot_id => lot_id)
+    lot = Lot.find_by_id(lot_id)
+    raise Exception.new("Can't find lot with id=#{lot_id}") if lot.nil?
+    @tree = lot.build_tree
 
     respond_to do |format|
       format.html # new.html.erb

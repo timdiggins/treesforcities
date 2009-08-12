@@ -1,0 +1,10 @@
+# in order for mapping to work on localhost
+# Rename this file as geokit_for_locahost.yml
+# sign up for a google key at http://code.google.com/apis/maps/signup.html
+# with 
+#      My web site URL: http://localhost
+
+GOOGLE_KEY: REPLACE_WITH_YOUR_GOOGLE_KEY
+
+
+YAHOO_KEY: REPLACE_WITH_YOUR_YAHOO_KEY

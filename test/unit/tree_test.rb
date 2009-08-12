@@ -1,10 +1,18 @@
 require 'test_helper'
 
 class TreeTest < ActiveSupport::TestCase
-  test "validates needs lot" do
-    t = Tree.new()
-    success = t.save
-    assert !success, "should fail because lot_id is nil"
+  
+  context "Tree" do
+    
+    should "update own lot" do
+      lot = lots(:one)
+      assert lot.tree.nil?
+      t = lot.build_tree
+      t.save!
+      lot.save!
+      lot = Lot.find_by_id(lot.id)
+      assert_equal t, lot.tree      
+    end
   end
+  
 end
-

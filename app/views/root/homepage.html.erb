@@ -1,3 +1,74 @@
 <h1>Welcome page</h1>
 
-<p>Overview coming soon</p>
+<div id="map" style="width:500px; height:300px;"></div>
+
+<script type="text/javascript"
+        src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<%=GeoKit::Geocoders::google%>">
+        	</script>
+					
+<script type="text/javascript">
+	var lots = <%= @lots.to_json %>;
+	
+	function initialize() { 
+  if (GBrowserIsCompatible() && typeof lots != 'undefined') {
+    var map = new GMap2(document.getElementById("map"));
+    map.setCenter(new GLatLng(51.509964, -0.134679), 13); //piccadilly circus
+    map.addControl(new GLargeMapControl());
+  
+    // Clicking the marker will hide it
+    function createMarker(latlng, lot) {
+      var icon =  new GIcon(G_DEFAULT_ICON);
+      if (lot.tree_id == null) {
+	  	icon.image = "<%=url_for '/icons/lot.png' %>";
+	  } else {
+			icon.image = "<%=url_for '/icons/tree.png' %>";
+		}
+      var marker = new GMarker(latlng,icon);
+      var html="<strong><a href='/lots/"+lot.id+"'>Lot #"+lot.id+"</a></strong><br />"+lot.nearest_address;
+			if (lot.tree_id == null) {
+				 html += " NO TREE";
+			} else {
+				html += " <a href='<%=url_for "/tree/"%>/"+lot.tree_id+"'>Tree</a> ";
+			}
+      GEvent.addListener(marker,"click", function() {
+        map.openInfoWindowHtml(latlng, html);
+      });
+      return marker;
+    }
+
+    var bounds = new GLatLngBounds();
+    for (var i = 0; i < lots.length; i++) {
+      console.log('here we go');
+      var lot = lots[i].lot;
+      console.log('here we go2');
+      var latlng=new GLatLng(lot.lat,lot.lng);
+      bounds.extend(latlng);
+      map.addOverlay(createMarker(latlng, lot));
+      console.log('lot:'+lot.lat+' lat: ' + latlng.lat()+' bounds center: '+ bounds.getCenter());
+    }
+    map.setCenter(bounds.getCenter(),map.getBoundsZoomLevel(bounds));
+  }
+}  
+
+</script>
+
+<%= javascript_include_tag 'lots' %>
+
+
+<script type="text/javascript">
+	window.onload = initialize;
+	window.onunload=GUnload;
+</script>
+
+<h2>Lots:</h2>
+<ul>
+
+<% @lots.each do |lot|%>
+  <li>
+  	<%= link_to"##{lot.id}", lot_path(lot)%>
+		<%= lot.lat%>, <%=lot.lng%>
+	</li>
+<% end %>
+
+</ul>
+  <code>var lots = <%= h(@lots.to_json) %>;</code>

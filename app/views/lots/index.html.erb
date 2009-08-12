@@ -4,11 +4,11 @@
 
 <% @lots.each do |lot| %>
   <li>
-    <h2><%= link_to lot.project, lot %> (<%=h lot.id %>)</h2>
-    <p>Street: <%=h lot.site_street %></p>
-    <p>Location: <%=h lot.exact_loc %></p>
-    <p>Borough: <%=h lot.borough %>, Ward: <%=h lot.ward %></p>
-    <p>owned by: <%=h lot.land_ownership %></p>
+    <%= link_to "Lot ##{lot.id}", lot %>
+    <%=h lot.nearest_address %>
+    <%=h lot.postcode %>
+    <% if lot.tree.nil?%> NO TREE
+		<% else %> (Has Tree) <% end %>
   </li>
 <% end %>
 </ul>

@@ -3,11 +3,7 @@
 one:
   tree_no: MyString
   date_planted: 2009-05-22
-  species: MyString
-  common_name: MyString
 
 two:
   tree_no: MyString2
   date_planted: 2009-05-23
-  species: MyString
-  common_name: MyString
