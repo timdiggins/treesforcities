@@ -1,4 +1,3 @@
-#This file is an example - it is overwritten by the correct file on the server
 
 # A Site key gives additional protection against a dictionary attack if your
 # DB is ever compromised.  With no site key, we store
@@ -18,7 +17,7 @@
 # keep it someplace secure.  Use the random value given or type in the lyrics to
 # your favorite Jay-Z song or something; any moderately long, unpredictable text.
 REST_AUTH_SITE_KEY         = 'some random string (replaced on server)'
-
+  
 # Repeated applications of the hash make brute force (even with a compromised
 # database and site key) harder, and scale with Moore's law.
 #
