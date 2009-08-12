@@ -25,7 +25,6 @@
 </div>
 
 <div>
-<p>tree_id: <%= @lot.tree_id%></p>
 <% if  @lot.tree.nil?%>
   <p>There is no tree in this lot, yet</p>
 	<p><%= link_to "Create a tree in this Lot", new_tree_path(:lot_id=> @lot) %></p>

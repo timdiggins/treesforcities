@@ -25,7 +25,7 @@ end
 
 task :install_gem_dependencies do
   run "cd #{current_path} && 
-        Arake gems RAILS_ENV=#{rails_env} > /dev/null &&
+        rake gems RAILS_ENV=#{rails_env} > /dev/null &&
         sudo rake gems:install RAILS_ENV=#{rails_env}"
 end
 
@@ -66,7 +66,7 @@ end
 #end
 
 after "deploy:symlink", "link_shared_stuff"
-after "deploy:symlink", "install_gem_dependencies"
+#after "deploy:symlink", "install_gem_dependencies"
 before "deploy:update_code", "deploy:git:pending"
 #before "deploy:migrate", "backup_to_s3"
 #before "backup_to_s3", "link_s3_yml"

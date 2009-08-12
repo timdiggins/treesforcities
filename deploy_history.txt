@@ -220,3 +220,36 @@ I deployed the latest. It includes:
 http://tfc.vm.bytemark.co.uk/
 
 ##############################################
+##############################################
+
+Deployment to PRODUCTION (c4091cd)
+I deployed the latest. It includes:
+
+* fixing problems with icons (apache auto aliasing madness - easier not to have anything in /icons/) and with other public/ perms problems)  (Tim Diggins)
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################
+##############################################
+
+Deployment to PRODUCTION (c4091cd)
+I deployed the latest. It includes:
+
+* fixing problems with icons (apache auto aliasing madness - easier not to have anything in /icons/) and with other public/ perms problems)  (Tim Diggins)
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################
+##############################################
+
+Deployment to PRODUCTION (c4091cd)
+I deployed the latest. It includes:
+
+* fixing problems with icons (apache auto aliasing madness - easier not to have anything in /icons/) and with other public/ perms problems)  (Tim Diggins)
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################

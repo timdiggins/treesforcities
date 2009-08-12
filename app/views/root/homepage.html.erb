@@ -7,7 +7,7 @@
         	</script>
 					
 <script type="text/javascript">
-	var lots = <%= @lots.to_json %>;
+	var lots = <%= @lots.to_json(:include=>:tree) %>;
 	
 	function initialize() { 
   if (GBrowserIsCompatible() && typeof lots != 'undefined') {
@@ -18,17 +18,17 @@
     // Clicking the marker will hide it
     function createMarker(latlng, lot) {
       var icon =  new GIcon(G_DEFAULT_ICON);
-      if (lot.tree_id == null) {
+      if (lot.tree == null) {
 	  	icon.image = "<%=url_for '/images/icons/lot.png' %>";
 	  } else {
 			icon.image = "<%=url_for '/images/icons/tree.png' %>";
 		}
       var marker = new GMarker(latlng,icon);
       var html="<strong><a href='/lots/"+lot.id+"'>Lot #"+lot.id+"</a></strong><br />"+lot.nearest_address;
-			if (lot.tree_id == null) {
+			if (lot.tree == null) {
 				 html += " NO TREE";
 			} else {
-				html += " <a href='<%=url_for "/tree/"%>/"+lot.tree_id+"'>Tree</a> ";
+				html += " Tree "+lot.tree.tree_no;
 			}
       GEvent.addListener(marker,"click", function() {
         map.openInfoWindowHtml(latlng, html);
@@ -38,15 +38,13 @@
 
     var bounds = new GLatLngBounds();
     for (var i = 0; i < lots.length; i++) {
-      console.log('here we go');
       var lot = lots[i].lot;
-      console.log('here we go2');
       var latlng=new GLatLng(lot.lat,lot.lng);
       bounds.extend(latlng);
       map.addOverlay(createMarker(latlng, lot));
       console.log('lot:'+lot.lat+' lat: ' + latlng.lat()+' bounds center: '+ bounds.getCenter());
     }
-    map.setCenter(bounds.getCenter(),map.getBoundsZoomLevel(bounds));
+    map.setCenter(bounds.getCenter(), map.getBoundsZoomLevel(bounds));
   }
 }  
 
@@ -60,7 +58,7 @@
 	window.onunload=GUnload;
 </script>
 
-<!--<h2>Debugging stuff:</h2>
+<h2>Debugging stuff:</h2>
 <ul>
 <% @lots.each do |lot|%>
   <li>
@@ -70,5 +68,4 @@
 <% end %>
 
 </ul>
-  <code>var lots = <%= h(@lots.to_json) %>;</code>
--->
+  <code>var lots = <%= h(@lots.to_json(:include=>:tree)) %>;</code>

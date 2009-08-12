@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090812135333) do
+ActiveRecord::Schema.define(:version => 20090812233129) do
 
   create_table "comments", :force => true do |t|
     t.integer  "lot_id"
@@ -27,13 +27,11 @@ ActiveRecord::Schema.define(:version => 20090812135333) do
     t.float    "lng"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tree_id"
   end
 
   create_table "trees", :force => true do |t|
     t.string   "tree_no"
     t.date     "date_planted"
-    t.string   "postcode"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "lot_id"
