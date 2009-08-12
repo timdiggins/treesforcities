@@ -1,6 +1,6 @@
-#this is only used on local dev machines
-
 development:
+  #adapter: sqlite3
+  #database: db/development.sqlite3
   adapter: mysql
   database: treemap_development
   username: root
@@ -17,7 +17,7 @@ test:
   encoding: utf8
 
 production:
-  adapter: mysql
+  adapter: posasdf
   database: treemap_development
   username: root
   password: 

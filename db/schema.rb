@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090728130512) do
+ActiveRecord::Schema.define(:version => 20090522170921) do
 
   create_table "comments", :force => true do |t|
     t.integer  "lot_id"
@@ -52,27 +52,5 @@ ActiveRecord::Schema.define(:version => 20090728130512) do
     t.datetime "updated_at"
     t.integer  "lot_id"
   end
-
-  create_table "users", :force => true do |t|
-    t.string   "login",                     :limit => 40
-    t.string   "name",                      :limit => 100, :default => ""
-    t.string   "email",                     :limit => 100
-    t.string   "crypted_password",          :limit => 40
-    t.string   "salt",                      :limit => 40
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "remember_token",            :limit => 40
-    t.datetime "remember_token_expires_at"
-    t.string   "activation_code",           :limit => 40
-    t.datetime "activated_at"
-    t.string   "state",                                    :default => "passive"
-    t.datetime "deleted_at"
-    t.boolean  "editor",                                   :default => false
-    t.boolean  "admin",                                    :default => true
-    t.integer  "login_count",                              :default => 0
-    t.datetime "last_login_at"
-  end
-
-  add_index "users", ["login"], :name => "index_users_on_login", :unique => true
 
 end

@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <title><%=h @page_title ? "#{@page_title} | Treemap" : "Treemap" %></title>
+  <title>Trees: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'trees' %>
 </head>
 <body>
@@ -15,14 +15,6 @@
   <ul id="navigation">
     <li><%= link_to 'Overview', "/" %></li>
     <li><%= link_to 'Tree Lots', lots_path %></li>
-
-   <% if logged_in? -%>
-      <li>Logged in as <%= link_to(current_user.name, user_path(current_user)) %></li>
-      <li><%=link_to 'Logout', logout_path %> </li>
-   <% else %>
-		<li><%= link_to 'Login', login_path %></li>
-    <li><%= link_to 'Signup', signup_path %></li>
-		<% end %>
   </ul>
   <p style="color: green"><%= flash[:notice] %></p>
   
