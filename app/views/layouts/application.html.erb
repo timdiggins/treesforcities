@@ -24,7 +24,7 @@
     <li><%= link_to 'Signup', signup_path %></li>
 		<% end %>
   </ul>
-  <p style="color: green"><%= flash[:notice] %></p>
+  <%= render(:partial => '/layouts/flash') %>
   
   <%= yield %>
 </div>

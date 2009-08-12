@@ -3,11 +3,12 @@ module Authentication
     :name_regex, :bad_name_message,
     :email_name_regex, :domain_head_regex, :domain_tld_regex, :email_regex, :bad_email_message
 
-  self.login_regex       = /\A\w[\w\.\-_@]+\z/                     # ASCII, strict
+  #trqd 
+  self.login_regex       = /\A\w[\w_]+\z/                     # ASCII, strict
   # self.login_regex       = /\A[[:alnum:]][[:alnum:]\.\-_@]+\z/     # Unicode, strict
   # self.login_regex       = /\A[^[:cntrl:]\\<>\/&]*\z/              # Unicode, permissive
 
-  self.bad_login_message = "use only letters, numbers, and .-_@ please.".freeze
+  self.bad_login_message = "for login, use only letters, numbers, and _ (underscore) please.".freeze
 
   self.name_regex        = /\A[^[:cntrl:]\\<>\/&]*\z/              # Unicode, permissive
   self.bad_name_message  = "avoid non-printing characters and \\&gt;&lt;&amp;/ please.".freeze
