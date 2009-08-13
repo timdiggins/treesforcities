@@ -1,11 +1,16 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
-  lot_id: 1
-  text: MyText
-  author: MyString
+comment_on_one_by_tim:
+  lot: one
+  text: Useless information
+  user: tim
+  
+comment_on_one_by_alex:
+  lot: one
+  text: Some more information
+  user: alex
 
-two:
-  lot_id: 1
-  text: MyText
-  author: MyString
+comment_on_two_by_alex:
+  lot: two
+  text: My lovely comment
+  user: alex

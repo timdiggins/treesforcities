@@ -15,7 +15,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resource :session
 
-  map.resources :lots
+  map.resources :lots, :has_many => [ :comments ]
 
   map.resources :trees
 

@@ -78,12 +78,30 @@
 
 <div class="grid_16">
 <h2>Comments</h2>
+<ul id="comments">
 <% @lot.comments.each do |comment| %>
-	<div>
+	<li class="comment">
 		<p><%=h(comment.text)%></p>
-		<p><%=h(comment.author)%></p> 
-		<p><%=time_ago_in_words(comment.created_at)%></p> 
-	</div>
+		<p>by <%= link_to h(comment.user), comment.user%>
+		<%=time_ago_in_words(comment.created_at)%> ago</p> 
+	</li>
+<% end %>
+</ul>
+<% if logged_in? %>
+  <% form_for([@lot, @comment]) do |form| %>
+
+    <%= form.error_messages %>
+    <p>
+      <%= form.label :text %>
+      <%= form.text_field :text %>
+    </p>
+    
+    <p>
+      <%= form.submit 'Add comment' %>
+    </p>
+  <% end %>
+<% else%>
+	Login or sign up to be able to comment!
 <% end %>
 <% if editor? -%>
 <p class="options">

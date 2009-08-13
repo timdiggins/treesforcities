@@ -15,7 +15,7 @@ class LotsController < ApplicationController
   # GET /lots/1.xml
   def show
     @lot = Lot.find(params[:id])
-
+    @comment = @lot.comments.new
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @lot }

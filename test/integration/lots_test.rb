@@ -44,11 +44,14 @@ class LotsTest < ActionController::IntegrationTest
     end
     
     should "be able to make a comment" do
+      get_ok "/lots/#{lots(:one).id}"
       assert_select '.comment a[href=/users/quentin]', :count=>0
       comment = "Some ideas I had about this lovely thing"
-      fill_in :comment_body, :with=> comment
+      view
+      fill_in :text, :with=> comment
       click_button
       follow_redirect!
+      assert_response_ok
       assert_select 'p', /.*#{comment}.*/
       assert_has_linkhref true, '/users/quentin'
       assert_select '.comment a[href=/users/quentin]', :min=>1      

@@ -9,14 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090812233129) do
+ActiveRecord::Schema.define(:version => 20090813123641) do
 
   create_table "comments", :force => true do |t|
     t.integer  "lot_id"
     t.text     "text"
-    t.string   "author"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "lots", :force => true do |t|

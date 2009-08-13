@@ -353,3 +353,50 @@ I deployed the latest. It includes:
 http://tfc.vm.bytemark.co.uk/
 
 ##############################################
+##############################################
+
+Deployment to PRODUCTION (def95bd)
+I deployed the latest. It includes:
+
+* added map to show page  (Tim Diggins)
+* fixed admin user show  (Alexander Kohlhofer)
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################
+##############################################
+
+Deployment to PRODUCTION (7212827)
+I deployed the latest. It includes:
+
+* added map to show page  (Tim Diggins)
+* fixed flashes  (Alexander Kohlhofer)
+* fixed admin user show  (Alexander Kohlhofer)
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################
+##############################################
+
+Deployment to PRODUCTION (7212827)
+I deployed the latest. It includes:
+
+* added map to show page  (Tim Diggins)
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################
+##############################################
+
+Deployment to PRODUCTION (7212827)
+I deployed the latest. It includes:
+
+* added map to show page  (Tim Diggins)
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################
