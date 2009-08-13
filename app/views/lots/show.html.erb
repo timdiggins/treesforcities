@@ -2,7 +2,7 @@
 
 <div class="grid_6">
   
-  <h2><%=@page_title = @lot %></h2>
+  <h2><%=@page_title = h(@lot) %></h2>
   <% if  @lot.tree.nil?%>
     <p>There is no tree in this lot, yet</p>
       <% if editor? -%>

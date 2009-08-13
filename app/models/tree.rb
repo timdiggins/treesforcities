@@ -3,4 +3,7 @@ class Tree < ActiveRecord::Base
   
   validates_associated :lot
   
+  def to_s
+    "Tree ##{(tree_no)}"
+  end
 end
