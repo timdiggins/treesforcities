@@ -1,6 +1,7 @@
 /* @override 
 	http://localhost:3000/stylesheets/trees.css?1250081131
 	http://localhost:3000/stylesheets/trees.css?1250161020
+	http://localhost:3000/stylesheets/trees.css?1250161451
 */
 
 /* v1.0 | 20080212 */
@@ -106,10 +107,14 @@ form p {
 	margin:1em 0;
 }
 
-form label {
+label {
 	display:block;
+	margin-bottom: 0.5em;
 }
 
+label.linedUp {
+  	display: inline;
+}
 
 form input {
 	font-size:1.2em;
@@ -199,3 +204,20 @@ form input {
 }
 
 
+
+
+.clear-this {
+  clear: both;
+  height: 0px;
+  overflow: hidden;
+  margin: 0px;
+  padding: 0px;
+}
+
+
+.note {
+  	display: block;
+  	color: #666;
+  	margin-top: 0.4em;
+  	font-size: 0.9em;
+}

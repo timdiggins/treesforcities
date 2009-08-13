@@ -1,18 +1,27 @@
 
   <p>
     <%= form.label :nearest_address %>
+    
+    <%= form.text_field :nearest_address %>
     <% if @lot.new_record? -%>
       <span class="note">A postal address in the UK (without the postcode). Computer will use this to put it roughly on a map</span>
     <% end -%>
-    <%= form.text_field :nearest_address %>
     </p>
-  
+
+
+
   <p>
     <%= form.label :postcode %>
     <%= form.text_field :postcode %>
   </p>
+
     <p>
     <%= form.label :how_to_find %>
-    <span class="note">Notes for a human on the ground starting from the nearest address.</span>
     <%= form.text_field :how_to_find %>
+    <span class="note">Notes for a human on the ground starting from the nearest address.</span> 
   </p>
+
+   
+
+
+
