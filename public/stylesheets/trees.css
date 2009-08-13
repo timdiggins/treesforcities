@@ -1,14 +1,3 @@
-/* @override 
-	http://localhost:3000/stylesheets/trees.css?1250081131
-	http://localhost:3000/stylesheets/trees.css?1250161020
-	http://localhost:3000/stylesheets/trees.css?1250161451
-	http://localhost:3000/stylesheets/trees.css?1250162145
-	http://localhost:3000/stylesheets/trees.css?1250162407
-	http://localhost:3000/stylesheets/trees.css?1250164304
-	http://localhost:3000/stylesheets/trees.css?1250166037
-	http://localhost:3000/stylesheets/trees.css?1250168640
-*/
-
 /* v1.0 | 20080212 */
 /* from http://meyerweb.com/eric/tools/css/reset/ */
 
@@ -244,11 +233,17 @@ form input {
   	font-size: 0.9em;
 }
 
+.comment p.meta a {
+  	color: #666;
+}
+
 #comment_text {
   	height: 10em;
   	width: 100%;
 }
 
 .comment {
-  	margin-bottom: 2em;
+  	margin-bottom: 1em;
+  	border-top: 1px dashed #CCC;
+  	padding-top: 0.3em;
 }
