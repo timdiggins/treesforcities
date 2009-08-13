@@ -14,12 +14,13 @@ function initialize() {
       icon.image = '/images/icons/tree.png';
     }
       var marker = new GMarker(latlng,icon);
-      var html="<strong><a href='/lots/"+lot.id+"'>Lot #"+lot.id+"</a></strong><br />"+lot.nearest_address;
+      var html="<strong><a href='/lots/"+lot.id+"'>"
       if (lot.tree == null) {
-         html += " NO TREE";
+        html += "Empty lot #"+lot.id+"</a></strong><br />";
       } else {
-        html += " Tree "+lot.tree.tree_no;
+        html +="Tree #"+lot.tree.tree_no+"</a></strong><br />";
       }
+			html += lot.nearest_address + " "+lot.postcode;
       GEvent.addListener(marker,"click", function() {
         map.openInfoWindowHtml(latlng, html);
       });
