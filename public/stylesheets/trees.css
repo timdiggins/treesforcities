@@ -5,6 +5,8 @@
 	http://localhost:3000/stylesheets/trees.css?1250162145
 	http://localhost:3000/stylesheets/trees.css?1250162407
 	http://localhost:3000/stylesheets/trees.css?1250164304
+	http://localhost:3000/stylesheets/trees.css?1250166037
+	http://localhost:3000/stylesheets/trees.css?1250168640
 */
 
 /* v1.0 | 20080212 */
@@ -105,7 +107,7 @@ p.options a {
 
 
 form {
-	padding:1em;
+	padding:1px 1em;
 	background:#EEE;
 	border:1px solid #DDD;
 }
@@ -229,4 +231,24 @@ form input {
   	color: #666;
   	margin-top: 0.4em;
   	font-size: 0.9em;
+}
+
+
+.comment p {
+  	line-height: 1.5em;
+  	margin: 0.5em 0;
+}
+
+.comment p.meta {
+  	color: #999;
+  	font-size: 0.9em;
+}
+
+#comment_text {
+  	height: 10em;
+  	width: 100%;
+}
+
+.comment {
+  	margin-bottom: 2em;
 }
