@@ -2,6 +2,7 @@
 	http://localhost:3000/stylesheets/trees.css?1250081131
 	http://localhost:3000/stylesheets/trees.css?1250161020
 	http://localhost:3000/stylesheets/trees.css?1250161451
+	http://localhost:3000/stylesheets/trees.css?1250162145
 */
 
 /* v1.0 | 20080212 */
@@ -74,14 +75,19 @@ h2, h3 {
 }
 
 .lots {
-	border-bottom:2px dashed #DDD;
+	border-bottom:1px dashed #DDD;
 	margin-bottom:2em;
 }
 
 
 .lots li {
-	border-top:2px dashed #DDD;
-	padding:0 0 1em 0;
+	border-top:1px dashed #DDD;
+	padding:0.7em 0;
+}
+
+.lots li img {
+	vertical-align:middle;
+	margin-right: 0.3em;
 }
 
 
