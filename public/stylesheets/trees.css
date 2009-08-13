@@ -1,3 +1,5 @@
+/* @override http://localhost:3000/stylesheets/trees.css?1250081131 */
+
 /* v1.0 | 20080212 */
 /* from http://meyerweb.com/eric/tools/css/reset/ */
 
@@ -135,13 +137,28 @@ form input {
 	margin-right:2em;
 }
 
+#flash {
+  margin: 0px;
+}
 
+#flash p {
+  background-color: #FE9;
+  padding: 0.5em 1em;
+  margin: 0px;
+  text-align: center;
+  border-top: 2px solid #c8bb78;
+  font-weight: bold;
+}
 
+#flash.notice p {
+	color: green;
+}
 
-
-
-
-
+#flash.error p {
+	background-color: #fa4038;
+	  border-top: 2px solid #c8312a;
+	color: White;
+}
 
 
 
@@ -180,4 +197,5 @@ form input {
   font-size: 12px;
   list-style: square;
 }
+
 

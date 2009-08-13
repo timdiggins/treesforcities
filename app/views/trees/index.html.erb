@@ -1,26 +1,9 @@
 <h1>Listing trees</h1>
 
-<table>
-  <tr>
-    <th>Tree no</th>
-    <th>Date planted</th>
-    <th>Species</th>
-    <th>Common name</th>
-  </tr>
-
-
-<% @trees.each do |tree| %>
-  <tr>
-    <td><%=h tree.tree_no %></td>
-    <td><%=h tree.date_planted %></td>
-    <td><%=h tree.species %></td>
-    <td><%=h tree.common_name %></td>
-    <td><%= link_to 'Show', tree %></td>
-    <td><%= link_to 'Edit', edit_tree_path(tree) %></td>
-    <td><%= link_to 'Destroy', tree, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+<ul><% @trees.each do |tree| %>
+  <li>
+  	<%= render tree%>
+  </li>
 <% end %>
-</table>
 
-<br />
-
+</ul>

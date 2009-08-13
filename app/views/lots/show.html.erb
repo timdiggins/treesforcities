@@ -1,71 +1,66 @@
-<p>
-  <b>Project:</b>
-  <%=h @lot.project %>
-</p>
+<h2>
+  <% if @lot.tree.nil?-%>
+      <%= image_tag '/images/icons/lot.png'%>
+			Empty lot #<%=@lot.id%>
 
-<p>
-  <b>Site street:</b>
-  <%=h @lot.site_street %>
-</p>
-
-<p>
-  <b>Exact loc:</b>
-  <%=h @lot.exact_loc %>
-</p>
-
-<p>
-  <b>Land ownership:</b>
-  <%=h @lot.land_ownership %>
-</p>
-
-<p>
-  <b>Borough:</b>
-  <%=h @lot.borough %>
-</p>
-
-<p>
-  <b>Ward:</b>
-  <%=h @lot.ward %>
-</p>
-
-<p>
-  <b>Postcode:</b>
-  <%=h @lot.postcode %>
-</p>
-
-<p>
-  <b>Geo x:</b>
-  <%=h @lot.geo_x %>
-</p>
-
-<p>
-  <b>Geo y:</b>
-  <%=h @lot.geo_y %>
-</p>
+  <% else -%> 
+      <%= image_tag '/images/icons/tree.png'%>
+			Tree #<%=@lot.tree.tree_no%> at lot #<%=@lot.id%>
+  <% end -%>	
+</h2>
 
 <p><%= link_to "Create a tree in this Lot", new_tree_path(:lot_id=> @lot) %></p>
 
+<div>
 <% if  @lot.tree.nil?%>
   <p>There is no tree in this lot, yet</p>
-	<p><%= link_to "Create a tree in this Lot", new_tree_path(:lot_id=> @lot) %></p>
+  <p><%= link_to "Create a tree in this Lot", new_tree_path(:lot_id=> @lot) %></p>
 
 <% else %>
-	<h2>Tree</h2>
-	<ul cass="trees">
-	  <%= render :partial=>'trees/tree', :object=>@lot.tree%>
-	</ul>
+  <ul class="trees">
+    <%= render @lot.tree%>
+  </ul>
+  <p><%= link_to 'Edit Tree', edit_tree_path(@lot.tree) %></p>
 <% end %>
-<p class="options">
-  <%= link_to 'Edit this Lot', edit_lot_path(@lot) %>
-  <%= link_to 'Delete this Lot', @lot, :confirm => 'Are you sure?', :method => :delete %>
-</p>
-<p><%= link_to 'Back', lots_path %></p>
+</div>
+
+<h2>Location</h2>
+<div>
+	<p>
+	  <b>Nearest Address:</b>
+	  <%=h @lot.nearest_address %>
+	</p>
+	
+	<p>
+	  <b>Postcode:</b>
+	  <%=h @lot.postcode %>
+	</p>
+	
+	<p>
+	  <b>How to find it from there:</b>
+	  <%=h @lot.how_to_find %>
+	</p>
+	
+	<p>
+	  <b>Co-ordinates</b>: Latitude:
+	  <%= @lot.lat %>
+	   ,  
+	   Longditude:
+	  <%= @lot.lng %>
+	</p>
+</div>
+
 
 <h2>Comments</h2>
 <% @lot.comments.each do |comment| %>
-  <div>
-  <p><%=h(comment.text)%></p>
-  <p><%=h(comment.author)%></p> 
-  <p><%=time_ago_in_words(comment.created_at)%></p> 
-  </div>
+	<div>
+		<p><%=h(comment.text)%></p>
+		<p><%=h(comment.author)%></p> 
+		<p><%=time_ago_in_words(comment.created_at)%></p> 
+	</div>
 <% end %>
+
+<p class="options">
+	<%= link_to 'Edit this Lot', edit_lot_path(@lot) %>
+	<%= link_to 'Delete this Lot', @lot, :confirm => 'Are you sure?', :method => :delete %>
+</p>
