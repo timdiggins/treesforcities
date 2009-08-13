@@ -51,16 +51,18 @@
     	  <b>How to find it from there:</b>
     	  <%=h @lot.how_to_find %>
     	</p>
+			<p>
+        <b>Co-ordinates</b>: Latitude:
+        <%= @lot.lat %>
+         ,  
+         Longditude:
+        <%= @lot.lng %>
+      </p>
+  
+  <div id="map" style="width:100%; height:300px;"></div>
+			<%= render :partial => 'lots/map_scripts', :locals=>{:lots=>[@lot]} %>
 	
-    	<p>
-    	  <b>Co-ordinates</b>: Latitude:
-    	  <%= @lot.lat %>
-    	   ,  
-    	   Longditude:
-    	  <%= @lot.lng %>
-    	</p>
-	
-			<% if editor? -%>
+    			<% if editor? -%>
 			<p class="options">
 			  <%= link_to 'Edit location', edit_lot_path(@lot) %>
 			</p>
@@ -70,6 +72,7 @@
   
   </div>
 </div>
+
 
 <div class="grid_16">
 <h2>Comments</h2>

@@ -42,6 +42,17 @@ class LotsTest < ActionController::IntegrationTest
     should "be not able to make new tree on existing lot" do
       assert_can_make_tree false
     end
+    
+    should "be able to make a comment" do
+      assert_select '.comment a[href=/users/quentin]', :count=>0
+      comment = "Some ideas I had about this lovely thing"
+      fill_in :comment_body, :with=> comment
+      click_button
+      follow_redirect!
+      assert_select 'p', /.*#{comment}.*/
+      assert_has_linkhref true, '/users/quentin'
+      assert_select '.comment a[href=/users/quentin]', :min=>1      
+    end
   end
   
   
