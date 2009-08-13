@@ -1,5 +1,29 @@
+<h2>
+  <% if @lot.tree.nil?-%>
+      <%= image_tag '/images/icons/lot.png'%>
+			Empty lot #<%=@lot.id%>
+
+  <% else -%> 
+      <%= image_tag '/images/icons/tree.png'%>
+			Tree #<%=@lot.tree.tree_no%> at lot #<%=@lot.id%>
+  <% end -%>	
+</h2>
+
 <div>
-	<h2>Locaton</h2>
+<% if  @lot.tree.nil?%>
+  <p>There is no tree in this lot, yet</p>
+  <p><%= link_to "Create a tree in this Lot", new_tree_path(:lot_id=> @lot) %></p>
+
+<% else %>
+  <ul class="trees">
+    <%= render @lot.tree%>
+  </ul>
+  <p><%= link_to 'Edit Tree', edit_tree_path(@lot.tree) %></p>
+<% end %>
+</div>
+
+<h2>Location</h2>
+<div>
 	<p>
 	  <b>Nearest Address:</b>
 	  <%=h @lot.nearest_address %>
@@ -24,31 +48,17 @@
 	</p>
 </div>
 
-<div>
-<% if  @lot.tree.nil?%>
-  <p>There is no tree in this lot, yet</p>
-	<p><%= link_to "Create a tree in this Lot", new_tree_path(:lot_id=> @lot) %></p>
-
-<% else %>
-	<h2>Tree</h2>
-	<ul class="trees">
-	  <%= render @lot.tree%>
-	</ul>
-	<p><%= link_to 'Edit Tree', edit_tree_path(@lot.tree) %></p>
-
-<% end %>
-</div>
 
 <h2>Comments</h2>
 <% @lot.comments.each do |comment| %>
-  <div>
-  <p><%=h(comment.text)%></p>
-  <p><%=h(comment.author)%></p> 
-  <p><%=time_ago_in_words(comment.created_at)%></p> 
-  </div>
+	<div>
+		<p><%=h(comment.text)%></p>
+		<p><%=h(comment.author)%></p> 
+		<p><%=time_ago_in_words(comment.created_at)%></p> 
+	</div>
 <% end %>
 
 <p class="options">
-  <%= link_to 'Edit this Lot', edit_lot_path(@lot) %>
-  <%= link_to 'Delete this Lot', @lot, :confirm => 'Are you sure?', :method => :delete %>
+	<%= link_to 'Edit this Lot', edit_lot_path(@lot) %>
+	<%= link_to 'Delete this Lot', @lot, :confirm => 'Are you sure?', :method => :delete %>
 </p>

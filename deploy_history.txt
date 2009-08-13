@@ -253,3 +253,25 @@ I deployed the latest. It includes:
 http://tfc.vm.bytemark.co.uk/
 
 ##############################################
+##############################################
+
+Deployment to PRODUCTION (02e5afd)
+I deployed the latest. It includes:
+
+* tweaks  (Tim Diggins)
+* fixing basic map problems and removing more crappy fields  (Tim Diggins)
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################
+##############################################
+
+Deployment to PRODUCTION (02e5afd)
+I deployed the latest. It includes:
+
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################

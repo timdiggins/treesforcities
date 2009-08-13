@@ -1,14 +1,23 @@
-<h1>Lots</h1>
+<h1>Trees and Empty lots</h1>
 
 <ul class="lots">
 
 <% @lots.each do |lot| %>
   <li>
-    <%= link_to "Lot ##{lot.id}", lot %>
+  	<% link_to(lot) do-%>
+      <% if lot.tree.nil?-%>
+          <%= image_tag '/images/icons/lot.png'%>
+      <% else -%> 
+          <%= image_tag '/images/icons/tree.png'%>
+  		<% end -%>
+    <% end -%>
+	  <% if lot.tree.nil?-%>
+      <%= link_to "Empty lot ##{lot.id}", lot %>
+    <% else -%> 
+      <%= link_to "Tree ##{lot.tree.tree_no}", lot %> at lot #<%=lot.id%>
+		<% end -%>
     <%=h lot.nearest_address %>
     <%=h lot.postcode %>
-    <% if lot.tree.nil?%> NO TREE
-		<% else %> Tree #<%=lot.tree.tree_no%> <% end %>
   </li>
 <% end %>
 </ul>
