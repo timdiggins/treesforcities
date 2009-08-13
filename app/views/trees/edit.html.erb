@@ -1,12 +1,14 @@
-<h1>Editing tree</h1>
+<div class="grid_16">
+  <h1>Editing tree</h1>
 
-<% form_for(@tree) do |form| %>
-  <%= form.error_messages %>
-  <%= render :partial=>'form', :object=>form%>
-  <p>
-    <%= form.submit 'Update' %>
-  </p>
-<% end %>
+  <% form_for(@tree) do |form| %>
+    <%= form.error_messages %>
+    <%= render :partial=>'form', :object=>form%>
+    <p>
+      <%= form.submit 'Update' %>
+    </p>
+  <% end %>
 
-<%= link_to 'Show', @tree %> |
-<%= link_to 'Back', trees_path %>
+  <%= link_to 'Show', @tree %> |
+  <%= link_to 'Back', trees_path %>
+</div>

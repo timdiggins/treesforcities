@@ -1,12 +1,14 @@
-<h1>Editing lot</h1>
+<div class="grid_16">
+  <h1>Editing lot</h1>
 
-<% form_for(@lot) do |form| %>
-  <%= form.error_messages %>
-  <%= render :partial=>'form', :object=>form%>
-  <p>
-    <%= form.submit 'Update' %>
-  </p>
-<% end %>
+  <% form_for(@lot) do |form| %>
+    <%= form.error_messages %>
+    <%= render :partial=>'form', :object=>form%>
+    <p>
+      <%= form.submit 'Update' %>
+    </p>
+  <% end %>
 
-<%= link_to 'Show', @lot %> |
-<%= link_to 'Back', lots_path %>
+  <%= link_to 'Show', @lot %> |
+  <%= link_to 'Back', lots_path %>
+</div>

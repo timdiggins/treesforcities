@@ -1,14 +1,16 @@
-<h1>New tree</h1>
+<div class="grid_16">
+  <h1>New tree</h1>
 
-<% form_for(@tree) do |form| %>
-  <%= form.error_messages %>
+  <% form_for(@tree) do |form| %>
+    <%= form.error_messages %>
 
-  <%= render :partial=>'form', :object=>form%>
+    <%= render :partial=>'form', :object=>form%>
 
-  <%= form.hidden_field :lot_id %>  
-  <p>
-    <%= form.submit 'Create' %>
-  </p>
-<% end %>
+    <%= form.hidden_field :lot_id %>  
+    <p>
+      <%= form.submit 'Create' %>
+    </p>
+  <% end %>
 
-<%= link_to 'Back', trees_path %>
+  <%= link_to 'Back', trees_path %>
+</div>

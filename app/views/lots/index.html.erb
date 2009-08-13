@@ -1,25 +1,27 @@
-<h1>Trees and Empty lots</h1>
+<div class="grid_16">
+  <h1>Trees and Empty lots</h1>
 
-<ul class="lots">
+  <ul class="lots">
 
-<% @lots.each do |lot| %>
-  <li>
-  	<% link_to(lot) do-%>
-      <% if lot.tree.nil?-%>
-          <%= image_tag '/images/icons/lot.png'%>
+  <% @lots.each do |lot| %>
+    <li>
+    	<% link_to(lot) do-%>
+        <% if lot.tree.nil?-%>
+            <%= image_tag '/images/icons/lot.png'%>
+        <% else -%> 
+            <%= image_tag '/images/icons/tree.png'%>
+    		<% end -%>
+      <% end -%>
+  	  <% if lot.tree.nil?-%>
+        <%= link_to "Empty lot ##{lot.id}", lot %>
       <% else -%> 
-          <%= image_tag '/images/icons/tree.png'%>
+        <%= link_to "Tree ##{lot.tree.tree_no}", lot %> at lot #<%=lot.id%>
   		<% end -%>
-    <% end -%>
-	  <% if lot.tree.nil?-%>
-      <%= link_to "Empty lot ##{lot.id}", lot %>
-    <% else -%> 
-      <%= link_to "Tree ##{lot.tree.tree_no}", lot %> at lot #<%=lot.id%>
-		<% end -%>
-    <%=h lot.nearest_address %>
-    <%=h lot.postcode %>
-  </li>
-<% end %>
-</ul>
+      <%=h lot.nearest_address %>
+      <%=h lot.postcode %>
+    </li>
+  <% end %>
+  </ul>
 
-<p><%= link_to 'New lot', new_lot_path %></p>
+  <p><%= link_to 'New lot', new_lot_path %></p>
+</div>

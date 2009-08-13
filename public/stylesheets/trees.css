@@ -1,4 +1,7 @@
-/* @override http://localhost:3000/stylesheets/trees.css?1250081131 */
+/* @override 
+	http://localhost:3000/stylesheets/trees.css?1250081131
+	http://localhost:3000/stylesheets/trees.css?1250161020
+*/
 
 /* v1.0 | 20080212 */
 /* from http://meyerweb.com/eric/tools/css/reset/ */
@@ -65,15 +68,8 @@ h1 {
 	margin:1em 0;
 }
 
-h2 {
+h2, h3 {
 	margin:1em 0;
-}
-
-
-#wrap {
-	width:940px;
-	margin:0 auto;
-	padding:0 1em;
 }
 
 .lots {
@@ -124,17 +120,21 @@ form input {
 
 
 #navigation {
-	background-color:#EEE;
 	height:2em;
-	line-height:2em;
-	padding:0 2em;
+	line-height:2.2em;
 	margin-bottom:2em;
+	padding: 0;
+	border-bottom: 1px solid #CCC;
 }
 
 #navigation li {
 	float:left;
 	height: 2em;
-	margin-right:2em;
+	margin-right:1em;
+}
+
+#navigation a {
+	text-decoration: none;
 }
 
 #flash {

@@ -1,17 +1,15 @@
-<h2>
-  <% if @lot.tree.nil?-%>
-      <%= image_tag '/images/icons/lot.png'%>
-			Empty lot #<%=@lot.id%>
+<div class="grid_16">
+  <h2>
+    <% if @lot.tree.nil?-%>
+  			Empty lot #<%=@lot.id%>
+    <% else -%> 
+  			Tree #<%=@lot.tree.tree_no%> at lot #<%=@lot.id%>
+    <% end -%>	
+  </h2>
+</div>
 
-  <% else -%> 
-      <%= image_tag '/images/icons/tree.png'%>
-			Tree #<%=@lot.tree.tree_no%> at lot #<%=@lot.id%>
-  <% end -%>	
-</h2>
 
-<p><%= link_to "Create a tree in this Lot", new_tree_path(:lot_id=> @lot) %></p>
-
-<div>
+<div class="grid_6">
 <% if  @lot.tree.nil?%>
   <p>There is no tree in this lot, yet</p>
   <p><%= link_to "Create a tree in this Lot", new_tree_path(:lot_id=> @lot) %></p>
@@ -24,33 +22,51 @@
 <% end %>
 </div>
 
-<h2>Location</h2>
-<div>
-	<p>
-	  <b>Nearest Address:</b>
-	  <%=h @lot.nearest_address %>
-	</p>
+<div class="grid_10">
+  <h2>Location:</h2>
+  <div class="grid_1 alpha">
+    <% if @lot.tree.nil?-%>
+        <%= image_tag '/images/icons/lot.png'%>
+    <% else -%> 
+        <%= image_tag '/images/icons/tree.png'%>
+    <% end -%>
+  </div>
+  <div class="grid_9 omega">  
+    
+    <div>
+    	<p>
+    	  <b>Nearest Address:</b>
+    	  <%=h @lot.nearest_address %>
+    	</p>
 	
-	<p>
-	  <b>Postcode:</b>
-	  <%=h @lot.postcode %>
-	</p>
+    	<p>
+    	  <b>Postcode:</b>
+    	  <%=h @lot.postcode %>
+    	</p>
 	
-	<p>
-	  <b>How to find it from there:</b>
-	  <%=h @lot.how_to_find %>
-	</p>
+    	<p>
+    	  <b>How to find it from there:</b>
+    	  <%=h @lot.how_to_find %>
+    	</p>
 	
-	<p>
-	  <b>Co-ordinates</b>: Latitude:
-	  <%= @lot.lat %>
-	   ,  
-	   Longditude:
-	  <%= @lot.lng %>
-	</p>
+    	<p>
+    	  <b>Co-ordinates</b>: Latitude:
+    	  <%= @lot.lat %>
+    	   ,  
+    	   Longditude:
+    	  <%= @lot.lng %>
+    	</p>
+	
+    	<p class="options">
+      	<%= link_to 'Edit this Lot', edit_lot_path(@lot) %>
+      	<%= link_to 'Delete this Lot', @lot, :confirm => 'Are you sure?', :method => :delete %>
+      </p>
+    </div>  
+  
+  </div>
 </div>
 
-
+<div class="grid_16">
 <h2>Comments</h2>
 <% @lot.comments.each do |comment| %>
 	<div>
@@ -59,8 +75,4 @@
 		<p><%=time_ago_in_words(comment.created_at)%></p> 
 	</div>
 <% end %>
-
-<p class="options">
-	<%= link_to 'Edit this Lot', edit_lot_path(@lot) %>
-	<%= link_to 'Delete this Lot', @lot, :confirm => 'Are you sure?', :method => :delete %>
-</p>
+</div>
