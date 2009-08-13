@@ -1,7 +1,7 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
-  has_many :comments
+  has_many :comments, :order=> 'created_at DESC'
   
   include Authentication
   include Authentication::ByPassword
