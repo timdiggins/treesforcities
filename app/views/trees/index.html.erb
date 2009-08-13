@@ -3,6 +3,7 @@
 
   <ul><% @trees.each do |tree| %>
     <li>
+    <h3>Tree #<%= h(tree.tree_no)%></h3>
     	<%= render tree%>
     </li>
   <% end %>

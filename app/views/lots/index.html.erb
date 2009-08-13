@@ -12,11 +12,7 @@
             <%= image_tag '/images/icons/tree.png'%>
     		<% end -%>
       <% end -%>
-  	  <% if lot.tree.nil?-%>
-        <%= link_to "Empty lot ##{lot.id}", lot %>
-      <% else -%> 
-        <%= link_to "Tree ##{lot.tree.tree_no}", lot %> at lot #<%=lot.id%>
-  		<% end -%>
+        <%= link_to lot, lot %>
       <%=h lot.nearest_address %>
       <%=h lot.postcode %>
     </li>
