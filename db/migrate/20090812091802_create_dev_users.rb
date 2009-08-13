@@ -16,7 +16,6 @@ class CreateDevUsers < ActiveRecord::Migration
     )
     User.create!(
           :login=>'viz', :name=>"Some Visitor", 
-          :editor=>true, 
           :password=> 'vizpass',
           :password_confirmation=> 'vizpass',
           :email=>"viz@trees.com"

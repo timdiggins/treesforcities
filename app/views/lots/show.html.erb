@@ -12,13 +12,16 @@
 <div>
 <% if  @lot.tree.nil?%>
   <p>There is no tree in this lot, yet</p>
-  <p><%= link_to "Create a tree in this Lot", new_tree_path(:lot_id=> @lot) %></p>
-
+    <% if editor? -%>
+      <p><%= link_to "Create a tree in this Lot", new_tree_path(:lot_id=> @lot) %></p>
+    <% end%>
 <% else %>
   <ul class="trees">
     <%= render @lot.tree%>
   </ul>
-  <p><%= link_to 'Edit Tree', edit_tree_path(@lot.tree) %></p>
+	<% if editor? -%>
+    <p><%= link_to 'Edit Tree', edit_tree_path(@lot.tree) %></p>
+	<% end -%>
 <% end %>
 </div>
 
@@ -46,8 +49,12 @@
 	   Longditude:
 	  <%= @lot.lng %>
 	</p>
+	<% if editor? -%>
+	<p class="options">
+	  <%= link_to 'Edit location', edit_lot_path(@lot) %>
+	</p>
+	<% end -%>
 </div>
-
 
 <h2>Comments</h2>
 <% @lot.comments.each do |comment| %>
@@ -58,7 +65,8 @@
 	</div>
 <% end %>
 
+<% if editor? -%>
 <p class="options">
-	<%= link_to 'Edit this Lot', edit_lot_path(@lot) %>
-	<%= link_to 'Delete this Lot', @lot, :confirm => 'Are you sure?', :method => :delete %>
+	<%= link_to 'Delete this Tree/Lot', @lot, :confirm => 'Are you sure?', :method => :delete %>
 </p>
+<% end -%>

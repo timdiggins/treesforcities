@@ -18,7 +18,8 @@ class RemoveUnusedFieldsFromLots < ActiveRecord::Migration
     add_column :lots, :project, :string
     add_column :lots, :land_ownership, :string
     add_column :lots, :borough, :string
-    
+    add_column :lots, :ward
+
     rename_column :lots, :nearest_address, :site_street
     rename_column :lots, :how_to_find, :exact_loc
     

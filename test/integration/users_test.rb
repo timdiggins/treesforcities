@@ -3,6 +3,11 @@ require "#{File.dirname(__FILE__)}/../test_helper"
 class UsersTest < ActionController::IntegrationTest
   
   context "when unlogged_in" do
+    should "be able to see list of users" do
+      get_ok "/users"
+      assert_has_linkhref true, '/users/alex'
+    end
+    
     should "be able to see user" do
       get_ok "/users/alex"
       assert 'h1', /.*Alexander Kohlhofer.*/

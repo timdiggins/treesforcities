@@ -1,4 +1,5 @@
 class LotsController < ApplicationController
+  before_filter :editor_required, :except=>[:index,:show]
   # GET /lots
   # GET /lots.xml
   def index
@@ -82,4 +83,5 @@ class LotsController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
 end

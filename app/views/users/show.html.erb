@@ -1,3 +1,38 @@
-<h1><%= @page_title = h(@user.name) %></h1>
+<h1><%= @page_title = "#{h(@user.name)} (#{h(@user.login)})" %></h1>
 
-A user of <%= link_to 'treemap', root_path%>  
+
+<p>
+	<%= h(@user.name) %>
+	(<%= link_to h(@user.login), @user %>)
+	is 
+	<%if @user.admin %>
+	 an admin
+	<% elsif @user.editor %>
+	 an editor
+	<% else%>
+	 a user
+	<% end%>
+	 of <%= link_to 'Treemap', root_path%>.
+</p>
+
+<div>
+<% if admin? %>
+	<% form_for(@user) do |form| %>
+<p>As you are an admin, you can change this users ability to admin other users, or edit the content</p>
+
+	  <%= form.error_messages %>
+    <p>
+      <%= form.label :admin %>
+      <%= form.check_box :admin %>
+    </p>
+    <p>
+      <%= form.label :editor %>
+      <%= form.check_box :editor %>
+    </p>
+		
+		<p>
+	    <%= form.submit 'Update' %>
+	  </p>
+	<% end %>
+<% end%>
+</div>

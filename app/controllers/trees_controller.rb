@@ -1,4 +1,5 @@
 class TreesController < ApplicationController
+  before_filter :editor_required, :except=>[:index,:show]
   # GET /trees
   # GET /trees.xml
   def index

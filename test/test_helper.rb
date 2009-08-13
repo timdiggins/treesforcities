@@ -51,8 +51,11 @@ class ActionController::IntegrationTest
     assert_response 404
     assert_select "a[href=/]"
   end
-  
-  
+    
+    def login!(login, password = "monkey")
+    @logged_in = super
+  end
+
 end
 module ActionController
   module Integration
