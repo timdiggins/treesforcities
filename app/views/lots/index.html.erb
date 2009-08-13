@@ -23,5 +23,8 @@
   <% end %>
   </ul>
 
-  <p><%= link_to 'New lot', new_lot_path %></p>
+	<% if editor? -%>
+	  <p><%= link_to 'New lot', new_lot_path %></p>
+	<% end -%>
+
 </div>

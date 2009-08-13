@@ -43,3 +43,20 @@ tim:
   crypted_password:          da82b4daf660a44ee091249e409b7ede0e5bd265 # monkey
   created_at:                <%= 3.days.ago.to_s :db %>
 
+the_admin:
+  login:                     the_admin
+  name:                      The Administrator
+  salt:                      da4b9237bacccdf19c0760cab7aec4a8359010b0 # SHA1('1')
+  crypted_password:          da82b4daf660a44ee091249e409b7ede0e5bd265 # monkey
+  created_at:                <%= 13.days.ago.to_s :db %>
+  admin:                      true
+  editor:                     false
+  
+an_editor:
+  login:                     an_editor
+  name:                      An Editor
+  salt:                      da4b9237bacccdf19c0760cab7aec4a8359010b0 # SHA1('1')
+  crypted_password:          da82b4daf660a44ee091249e409b7ede0e5bd265 # monkey
+  created_at:                <%= 13.days.ago.to_s :db %>
+  admin:                      false
+  editor:                     true

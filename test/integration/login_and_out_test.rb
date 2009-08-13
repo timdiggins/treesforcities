@@ -27,11 +27,9 @@ class LoginAndOutTest < ActionController::IntegrationTest
       fill_in :email, :with=>'some@somewhere.com'
       fill_in :password, :with=> 'Parsewerd'
       fill_in 'user[password_confirmation]', :with=> 'Parsewerd'
-      view :fillin
       click_button
       assert_response_ok
       follow_redirect! while redirect?
-      view
       assert_select "a[href=/logout]"
       assert_login_doesnt_exist 'my lovely name'
       assert_login_doesnt_exist 'my lovely name'

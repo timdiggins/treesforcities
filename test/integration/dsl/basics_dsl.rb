@@ -15,6 +15,14 @@ module BasicsDsl
     result
   end
   
+  def login!(login, password = "monkey")
+    login(login, password)
+    u = User.find_by_login(login)
+    raise Exception.new("User '#{login}' doesn't exist") if u.nil?
+    raise Exception.new("Login for '#{login}' didn't work") if session[:user_id] != u.id
+    u
+  end
+  
   # performs a get request and checks that the response is under 400 (ok or redirected)
   def get_ok(path, parameters = nil, headers = nil)
     r = get(path, parameters, headers)
@@ -106,6 +114,11 @@ module BasicsDsl
     assert_select 'form#loginForm', :count=>0
   end
   
+  def assert_has_linkhref has_link, href
+    anchor = "a[href=#{href}]"
+    assert_select  anchor, {:count=>0}, "Expected no link to #{href}" unless has_link
+    assert_select anchor, {:min=>1}, "Expected a least one link to #{href}" if has_link
+  end 
   
   def get_with_basic_authentication(path, user_symbol)
     get path, {}, { :authorization => "Basic #{Base64.encode64("#{users(user_symbol).api_authentication_token}:X")}" }
