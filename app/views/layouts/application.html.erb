@@ -6,12 +6,14 @@
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <title><%=h @page_title ? "#{@page_title} | Treemap" : "Treemap" %></title>
   <%= stylesheet_link_tag 'trees' %>
+  <%= stylesheet_link_tag '960' %>
   <%= javascript_include_tag :defaults%>
 </head>
 <body>
   
 <div id="wrap">
   
+  <div class="container_16">
   <%= render(:partial => '/layouts/navbar') %>
   <%= render(:partial => '/layouts/flash') %>
   
