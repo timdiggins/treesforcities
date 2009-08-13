@@ -14,8 +14,8 @@
 
 
   <ul id="navigation">
-    <li><%= link_to 'Overview', "/" %></li>
-    <li><%= link_to 'Tree Lots', lots_path %></li>
+    <li><%= link_to 'Treemap', "/" %></li>
+    <li><%= link_to 'List', lots_path %></li>
 
    <% if logged_in? -%>
       <li>Logged in as <%= link_to(current_user.name, user_path(current_user)) %></li>

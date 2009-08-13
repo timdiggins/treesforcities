@@ -31,9 +31,11 @@
 
 <% else %>
 	<h2>Tree</h2>
-	<ul cass="trees">
-	  <%= render :partial=>'trees/tree', :object=>@lot.tree%>
+	<ul class="trees">
+	  <%= render @lot.tree%>
 	</ul>
+	<p><%= link_to 'Edit Tree', edit_tree_path(@lot.tree) %></p>
+
 <% end %>
 </div>
 

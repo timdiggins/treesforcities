@@ -1,6 +1,6 @@
 <h1>Treemap</h1>
 
-<div id="map" style="width:500px; height:300px;"></div>
+<div id="map" style="width:800px; height:400px;"></div>
 
 <script type="text/javascript"
         src="http://maps.google.com/maps?file=api&amp;v=2&amp;key=<%=GeoKit::Geocoders::google%>">
@@ -57,7 +57,7 @@
 	window.onload = initialize;
 	window.onunload=GUnload;
 </script>
-
+<!--
 <h2>Debugging stuff:</h2>
 <ul>
 <% @lots.each do |lot|%>
@@ -69,3 +69,4 @@
 
 </ul>
   <code>var lots = <%= h(@lots.to_json(:include=>:tree)) %>;</code>
+-->

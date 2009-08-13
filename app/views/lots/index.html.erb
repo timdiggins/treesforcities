@@ -8,7 +8,7 @@
     <%=h lot.nearest_address %>
     <%=h lot.postcode %>
     <% if lot.tree.nil?%> NO TREE
-		<% else %> (Has Tree) <% end %>
+		<% else %> Tree #<%=lot.tree.tree_no%> <% end %>
   </li>
 <% end %>
 </ul>
