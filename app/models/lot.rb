@@ -16,4 +16,9 @@ class Lot < ActiveRecord::Base
     geo = GeoKit::Geocoders::MultiGeocoder.geocode(address)
     self.lat, self.lng = geo.lat, geo.lng
   end
+  
+  def to_s
+    return "Empty lot ##{id}" if tree.nil?
+    "Tree ##{tree.tree_no}"
+  end
 end
