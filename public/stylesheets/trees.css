@@ -4,6 +4,7 @@
 	http://localhost:3000/stylesheets/trees.css?1250161451
 	http://localhost:3000/stylesheets/trees.css?1250162145
 	http://localhost:3000/stylesheets/trees.css?1250162407
+	http://localhost:3000/stylesheets/trees.css?1250164304
 */
 
 /* v1.0 | 20080212 */
@@ -158,6 +159,10 @@ form input {
   margin: 0px;
   text-align: center;
   font-weight: bold;
+}
+
+#map {
+  	margin-bottom: 1em;
 }
 
 #flash.notice p {

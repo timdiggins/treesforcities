@@ -1,4 +1,7 @@
-<div class="grid_16">
+
+
+<div class="grid_6">
+  
   <h2>
     <% if @lot.tree.nil?-%>
   			Empty lot #<%=@lot.id%>
@@ -6,27 +9,27 @@
   			Tree #<%=@lot.tree.tree_no%> at lot #<%=@lot.id%>
     <% end -%>	
   </h2>
-</div>
-
-
-<div class="grid_6">
-<% if  @lot.tree.nil?%>
-  <p>There is no tree in this lot, yet</p>
-    <% if editor? -%>
-      <p><%= link_to "Create a tree in this Lot", new_tree_path(:lot_id=> @lot) %></p>
-    <% end%>
-<% else %>
-  <ul class="trees">
-    <%= render @lot.tree%>
-  </ul>
-	<% if editor? -%>
-    <p><%= link_to 'Edit Tree', edit_tree_path(@lot.tree) %></p>
-	<% end -%>
-<% end %>
+  <% if  @lot.tree.nil?%>
+    <p>There is no tree in this lot, yet</p>
+      <% if editor? -%>
+        <p><%= link_to "Create a tree in this Lot", new_tree_path(:lot_id=> @lot) %></p>
+      <% end%>
+  <% else %>
+    <ul class="trees">
+      <%= render @lot.tree%>
+    </ul>
+  	<% if editor? -%>
+      <p><%= link_to 'Edit Tree', edit_tree_path(@lot.tree) %></p>
+  	<% end -%>
+  <% end %>
 </div>
 
 <div class="grid_10">
   <h2>Location:</h2>
+  
+  <div id="map" style="width:100%; height:320px;"></div>
+	<%= render :partial => 'lots/map_scripts', :locals=>{:lots=>[@lot]} %>
+			
   <div class="grid_1 alpha">
     <% if @lot.tree.nil?-%>
         <%= image_tag '/images/icons/lot.png'%>
@@ -59,8 +62,7 @@
         <%= @lot.lng %>
       </p>
   
-  <div id="map" style="width:100%; height:300px;"></div>
-			<%= render :partial => 'lots/map_scripts', :locals=>{:lots=>[@lot]} %>
+  
 	
     			<% if editor? -%>
 			<p class="options">
