@@ -1,10 +1,9 @@
 <div class="grid_16">
 <h1><%= @page_title = "#{h(@user.name)} (#{h(@user.login)})" %></h1>
 
-
+<div class="grid_6 alpha">
 <p>
-	<%= h(@user.name) %>
-	(<%= link_to h(@user.login), @user %>)
+	<%= link_to h(@user.name), @user %>
 	is 
 	<%if @user.admin %>
 	 an admin
@@ -16,19 +15,20 @@
 	 of <%= link_to 'Treemap', root_path%>.
 </p>
 
-<div>
+</div>
+<div class="grid_10 omega">
 <% if admin? %>
 	<% form_for(@user) do |form| %>
 <p>As you are an admin, you can change this users ability to admin other users, or edit the content</p>
 
 	  <%= form.error_messages %>
     <p>
-      <%= form.label :admin %>
       <%= form.check_box :admin %>
+      <%= form.label :admin, "", :class => "linedUp" %>
     </p>
     <p>
-      <%= form.label :editor %>
       <%= form.check_box :editor %>
+      <%= form.label :editor ,"", :class => "linedUp" %>
     </p>
 		
 		<p>
