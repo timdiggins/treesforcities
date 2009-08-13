@@ -307,3 +307,38 @@ I deployed the latest. It includes:
 http://tfc.vm.bytemark.co.uk/
 
 ##############################################
+##############################################
+
+Deployment to PRODUCTION (9906660)
+I deployed the latest. It includes:
+
+* improved some forms  (Alexander Kohlhofer)
+* got authentication real  (Tim Diggins)
+* implemented grid, improved lot show
+ (Alexander Kohlhofer)
+* improved copy  (Alexander Kohlhofer)
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################
+##############################################
+
+Deployment to PRODUCTION (6fe9b91)
+I deployed the latest. It includes:
+
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################
+##############################################
+
+Deployment to PRODUCTION (6fe9b91)
+I deployed the latest. It includes:
+
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################
