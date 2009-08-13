@@ -3,6 +3,7 @@
 	http://localhost:3000/stylesheets/trees.css?1250161020
 	http://localhost:3000/stylesheets/trees.css?1250161451
 	http://localhost:3000/stylesheets/trees.css?1250162145
+	http://localhost:3000/stylesheets/trees.css?1250162407
 */
 
 /* v1.0 | 20080212 */
@@ -153,11 +154,9 @@ form input {
 }
 
 #flash p {
-  background-color: #FE9;
-  padding: 0.5em 1em;
+  padding: 0 1em;
   margin: 0px;
   text-align: center;
-  border-top: 2px solid #c8bb78;
   font-weight: bold;
 }
 
@@ -167,7 +166,6 @@ form input {
 
 #flash.error p {
 	background-color: #fa4038;
-	  border-top: 2px solid #c8312a;
 	color: White;
 }
 
