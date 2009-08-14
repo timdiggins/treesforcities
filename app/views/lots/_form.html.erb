@@ -8,7 +8,7 @@
     <% end -%>
     </p>
 
-
+  
 
   <p>
     <%= form.label :postcode %>
@@ -20,6 +20,22 @@
     <%= form.text_field :how_to_find %>
     <span class="note">Notes for a human on the ground starting from the nearest address.</span> 
   </p>
+
+  <div id="coordinates">
+    <h3>Coordinates</h3>     
+  
+  <p><%= form.label :latitude %>  <%= form.text_field :lat %>
+  </p>
+  <p>
+    <%= form.label :longditude %>  <%= form.text_field :lng %>
+  </p>
+  <% if @lot.new_record?%><p class="note">Leave these blank and they will be looked up from the address & postcode. </p><% end -%>
+	<p class="note">
+      At present if you want to change the location of the tree you need to find out the latitude/Longditude yourself.
+      There's a tool here: <%= link_to nil, "http://www.gorissen.info/Pierre/maps/googleMapLocation.php"%>
+    </p>
+  
+</div>
 
    
 

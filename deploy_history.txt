@@ -400,3 +400,23 @@ I deployed the latest. It includes:
 http://tfc.vm.bytemark.co.uk/
 
 ##############################################
+##############################################
+
+Deployment to PRODUCTION (0344c88)
+I deployed the latest. It includes:
+
+* fixed map text  (Tim Diggins)
+* modifying tree titles  (Tim Diggins)
+* changed titling of lots (simpler)  (Tim Diggins)
+* fixed comments on user/show  (Alexander Kohlhofer)
+* ordering for user comments  (Tim Diggins)
+* added recent comments list on the user page  (Tim Diggins)
+* improved comments further  (Alexander Kohlhofer)
+* styled comments  (Alexander Kohlhofer)
+* adding comments - basic  (Tim Diggins)
+* improved lot show  (Alexander Kohlhofer)
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################
