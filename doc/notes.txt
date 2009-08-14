@@ -1,0 +1,92 @@
+dedicate this tree
+buy a tag for this tre
+as email fulfilment
+
+species table for each tree
+
+
+in memory of
+
+pictures of tree  
+
+donation
+
+an administrator for a tree
+
+nofollow on comments for spammers
+
+--------------------------------------------------
+
+sponsorship of a tree for a specific timeperiod
+while they are the sponsor, 
+they can upload images of the tree
+moderate content
+
+also have a dedication message & images
+
+they can also say whether or not they will accept other donations
+new donations count towards total time
+new donors are told that their content is to be approved by the sponsor
+
+ideally the sponsor is told by email when their time is coming up and of new content on their tree.
+
+anyone can make a commment - but this is didn't from a dedication message
+
+--------------------------------------------------
+
+Comments about the tree
+Images of the tree
+
+And Messages about the sponsorship
+And images about the sponsship
+main dedication message
+
+Tree
+dedication
+ 
+--------------------------------------------------
+
+order a tag:
+This tree is a Silver Birch
+See it online at http://treemap.treesforcities.org/t/bi3so
+powered by....
+
+
+--------------------------------------------------
+
+import flickr tags for tree with instructions
+sponsor/editor can delete
+
+--------------------------------------------------
+
+hophive
+groupsnearyou
+
+* integration of lots and trees -> why have lots?
+* unique tree url 
+
+INTERACT WITH THE TREE
+measuring point - analytics
+do they care
+
+* allow dedications by global editors
+* ordering dedications (by email)
+* ordering treetags (by email)
+* species (common name, latin name, image) dropdown for tree
+
+* images of tree: allow images (tagged by tree) flickr  and removal
+* more dedications / dedication history
+
+* marker has image of tree on it
+
+* in memory of
+* dedications - time algorithm
+
+--------------------------------------------------
+
+Leave a message on THIS tree: url
+
+Find out more about THIS tree: url
+
+--------------------------------------------------
+
