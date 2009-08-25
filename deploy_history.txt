@@ -443,3 +443,14 @@ I deployed the latest. It includes:
 http://tfc.vm.bytemark.co.uk/
 
 ##############################################
+##############################################
+
+Deployment to PRODUCTION (6813a0a)
+I deployed the latest. It includes:
+
+* added species (not yet used by trees, but will be, no images yet)  (Tim Diggins)
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################

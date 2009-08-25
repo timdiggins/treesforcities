@@ -48,7 +48,8 @@ class LotsTest < ActionController::IntegrationTest
       get_ok "/lots/#{lots(:one).id}"
       assert_select '.comment a[href=/users/quentin]', :count=>0
       comment = "Some ideas I had about this lovely thing"
-      fill_in :text, :with=> comment
+view
+fill_in :comment_text, :with=> comment
       click_button
       follow_redirect!
       assert_response_ok
