@@ -12,21 +12,21 @@ end
 
 class ActiveSupport::TestCase
   self.use_transactional_fixtures = true
-
+  
   self.use_instantiated_fixtures  = false
-
+  
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   #
   # Note: You'll currently still have to declare fixtures explicitly in integration tests
   # -- they do not yet inherit this setting
   fixtures :all
-
+  
   # Add more helper methods to be used by all tests here...
   #include AuthenticatedTestHelper
 end
 
 class ActionController::IntegrationTest
-
+  
   def new_session(&block) 
     open_session do | session | 
       session.extend(BasicsDsl)
@@ -42,20 +42,27 @@ class ActionController::IntegrationTest
     session.instance_eval(&block) if block
     session
   end 
-
+  
   def logger
     Rails.logger
   end
-
+  
   def assert_response_404
     assert_response 404
     assert_select "a[href=/]"
   end
-    
-    def login!(login, password = "monkey")
+  
+  def login!(login, password = "monkey")
     @logged_in = super
   end
-
+  
+  def assert_response_denied
+    if @logged_in.nil?
+      assert_redirected_to 'http://trees.dev/session/new'
+    else
+      assert_response 403
+    end
+  end
 end
 module ActionController
   module Integration

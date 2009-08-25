@@ -1,0 +1,26 @@
+
+<div class="grid_16">
+
+<h1>New species</h1>
+
+<% form_for(@species, :url=> {:action=>'create'}) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :common, "Common Name" %>
+    <%= f.text_field :common %>
+  </p>
+
+  <p>
+    <%= f.label :scientific, "Scientific Name" %>
+    <%= f.text_field :scientific %>
+  </p>
+
+  <p>
+    <%= f.submit 'Create' %>
+      <%= link_to 'Cancel', species_index_path %>
+  </p>
+
+<% end %>
+
+</div>

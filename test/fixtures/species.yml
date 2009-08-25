@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+birch:
+  common: Black Birch
+  scientific: Betula lenta
+
+beech:
+  common: European Beech
+  scientific: Fagus sylvatica

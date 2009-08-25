@@ -420,3 +420,26 @@ I deployed the latest. It includes:
 http://tfc.vm.bytemark.co.uk/
 
 ##############################################
+##############################################
+
+Deployment to PRODUCTION (1fdd971)
+I deployed the latest. It includes:
+
+* making it possible to edit coordinates in a hacky way  (Tim Diggins)
+* reformat  (Tim Diggins)
+* notes from meeting  (Tim Diggins)
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################
+##############################################
+
+Deployment to PRODUCTION (1fdd971)
+I deployed the latest. It includes:
+
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################

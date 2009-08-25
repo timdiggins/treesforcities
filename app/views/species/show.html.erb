@@ -1,0 +1,22 @@
+
+<div class="grid_16">
+
+  <h1><%=h @species %></h1>
+  
+  <p>
+    <b>Common:</b>
+    <%=h @species.common %>
+  </p>
+  
+  <p>
+    <b>Scientific:</b>
+    <%=h @species.scientific %>
+  </p>
+  
+  <% if editor? -%>
+	<p>
+    <%= link_to 'Edit', edit_species_path(@species) %> | 
+    <%= link_to 'Delete', @species, :confirm => 'Are you sure?', :method => :delete %>
+   </p>
+  <% end %>
+</div>

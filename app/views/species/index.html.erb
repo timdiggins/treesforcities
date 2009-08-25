@@ -1,0 +1,14 @@
+<div class="grid_16">
+	<h1>List of all species</h1>
+	
+	<ul id="species" class="species-list">
+	  
+	<% @species.each do |species| %>
+	    <li><%=link_to h(species), species %></li>
+	<% end %>
+	</ul>
+	
+	<% if editor? %>
+	  <p><%= link_to 'Add new species', new_species_path %></p>
+	<% end %>
+</div>
