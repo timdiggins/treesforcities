@@ -49,7 +49,7 @@ module LoggedinShould
 end
 
 
-class LotsTest < ActionController::IntegrationTest
+class TreesTest < ActionController::IntegrationTest
   
   context "Unlogged in user" do
     
