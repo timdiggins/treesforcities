@@ -1,32 +1,63 @@
 require "#{File.dirname(__FILE__)}/../test_helper"
 
+module AnyoneShould
+  def self.included(klass)
+    klass.class_eval do  
+      should "be able to see list of lots" do
+        get_ok '/lots'
+      end
+      
+      should "be able to view index of trees" do
+        get_ok "/trees"
+      end
+      
+      should "be able to see a lot" do
+        get_ok "/lots/#{lots(:one).id}"
+      end
+      
+      should "be able to view a tree" do
+        get_ok "/trees/#{trees(:one).id}"
+      end
+    end
+  end
+end
+
+module UnauthorizedShouldnt
+  def self.included(klass)
+    klass.class_eval do  
+      should "not be able to make new lot" do
+        assert_can_make_lot false
+      end
+      
+      should "not be able to make new tree on existing lot" do
+        assert_can_make_tree false
+      end
+      
+    end  
+  end
+end
+
+module LoggedinShould
+  def self.included(klass)
+    klass.class_eval do  
+      should "be able to make a comment" do
+        assert_can_make_comment
+      end
+      
+    end  
+  end
+end
+
+
 class LotsTest < ActionController::IntegrationTest
   
   context "Unlogged in user" do
     
-    should "be able to see list of lots" do
-      get_ok '/lots'
-    end
+    include AnyoneShould    
+    include UnauthorizedShouldnt
     
-    should "be able to view index of trees" do
-      get_ok "/trees"
-    end
-    
-    should "be able to see a lot" do
-      get_ok "/lots/#{lots(:one).id}"
-    end
-    
-    should "be able to view a tree" do
-      get_ok "/trees/#{trees(:one).id}"
-    end
-    
-    
-    should "not be able to make new lot" do
-      assert_can_make_lot false
-    end
-    
-    should "be not able to make new tree on existing lot" do
-      assert_can_make_tree false
+    should "not be able to make a comment" do
+      assert_can_make_comment false
     end
   end
   
@@ -36,28 +67,10 @@ class LotsTest < ActionController::IntegrationTest
       login!('quentin')
     end
     
-    should "not be able to make lot" do 
-      assert_can_make_lot false
-    end
-    should "be not able to make new tree on existing lot" do
-      assert_can_make_tree false
-    end
+    include AnyoneShould    
+    include LoggedinShould
+    include UnauthorizedShouldnt
     
-    should "be able to make a comment" do
-      #initial_size = Event.all.size
-      get_ok "/lots/#{lots(:one).id}"
-      assert_select '.comment a[href=/users/quentin]', :count=>0
-      comment = "Some ideas I had about this lovely thing"
-view
-fill_in :comment_text, :with=> comment
-      click_button
-      follow_redirect!
-      assert_response_ok
-      assert_select 'p', /.*#{comment}.*/
-      assert_has_linkhref true, '/users/quentin'
-      assert_select '.comment a[href=/users/quentin]', :min=>1
-      #assert initial_size+1, Event.all.size
-    end
   end
   
   
@@ -65,6 +78,9 @@ fill_in :comment_text, :with=> comment
     setup do
       login!('an_editor')
     end
+    
+    include AnyoneShould    
+    include LoggedinShould
     
     should "be able to make lot" do 
       assert_can_make_lot
@@ -115,5 +131,24 @@ fill_in :comment_text, :with=> comment
     
   end
   
+  def assert_can_make_comment can=true
+    #initial_size = Event.all.size
+    get_ok "/lots/#{lots(:one).id}"
+    assert_select ".comment a[href=/users/#{@logged_in.login}]", :count=>0 if can
+    if !can
+      assert_select 'form', :count=>0
+      return
+    end
+    
+    comment = "Some ideas I had about this lovely thing"
+    fill_in :comment_text, :with=> comment
+    click_button
+    follow_redirect!
+    assert_response_ok
+    assert_select 'p', /.*#{comment}.*/
+    assert_has_linkhref true, "/users/#{@logged_in.login}"
+    assert_select ".comment a[href=/users/#{@logged_in.login}]", :min=>1
+    #assert initial_size+1, Event.all.size
+  end
   
 end

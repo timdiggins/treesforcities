@@ -1,6 +1,6 @@
 require "#{File.dirname(__FILE__)}/../test_helper"
 
-module UnauthorizedUser
+module AnyoneShould
   def self.included(klass)
     klass.class_eval do  
       should "be able to see list" do
@@ -10,10 +10,12 @@ module UnauthorizedUser
       should "be able to see a species" do
         get_ok "/species/#{species(:birch).id}"
       end
-      
-      should "be able to view a species" do
-        get_ok "/species/#{species(:birch).id}"
-      end
+    end
+  end
+end
+module UnauthorizedShouldnt
+  def self.included(klass)
+    klass.class_eval do  
       
       should "not be able to make new species" do
         assert_can_make_species false
@@ -29,14 +31,16 @@ end
 class SpeciesTest < ActionController::IntegrationTest
   
   context "Unlogged in user" do
-    include UnauthorizedUser
+    include AnyoneShould
+    include UnauthorizedShouldnt
   end
   
   context "Logged in user" do
     setup do
       login!('quentin')
     end
-    include UnauthorizedUser
+    include AnyoneShould
+    include UnauthorizedShouldnt
   end
   
   
@@ -44,6 +48,7 @@ class SpeciesTest < ActionController::IntegrationTest
     setup do
       login!('an_editor')
     end
+    include AnyoneShould
     
     should "be able to make species" do 
       assert_can_make_species
@@ -77,9 +82,9 @@ class SpeciesTest < ActionController::IntegrationTest
   def assert_can_edit_species can=true
     species = species(:birch)
     get_ok "/species/#{species.id}"
-    url = "/species/#{species.id}/edit"
-    assert_has_linkhref can, url
-    get url
+    edit_url = "/species/#{species.id}/edit"
+    assert_has_linkhref can, edit_url
+    get edit_url
     if !can
       assert_response_denied
       return
