@@ -67,18 +67,18 @@ h2, h3 {
 	margin:1em 0;
 }
 
-.lots, .species-list {
+.trees, .species-list {
 	border-bottom:1px dashed #DDD;
 	margin-bottom:2em;
 }
 
 
-.lots li, .species-list li {
+.trees li, .species-list li {
 	border-top:1px dashed #DDD;
 	padding:0.7em 0;
 }
 
-.lots li img, .species-list li {
+.trees li img, .species-list li {
 	vertical-align:middle;
 	margin-right: 0.3em;
 }

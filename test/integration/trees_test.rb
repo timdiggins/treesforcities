@@ -3,16 +3,12 @@ require "#{File.dirname(__FILE__)}/../test_helper"
 module AnyoneShould
   def self.included(klass)
     klass.class_eval do  
-      should "be able to see list of lots" do
-        get_ok '/lots'
+      should "be able to see list of trees" do
+        get_ok '/trees'
       end
-      
-      should "be able to view index of trees" do
-        get_ok "/trees"
-      end
-      
-      should "be able to see a lot" do
-        get_ok "/lots/#{lots(:one).id}"
+            
+      should "be able to see a tree" do
+        get_ok "/trees/#{trees(:one).id}"
       end
       
       should "be able to view a tree" do
@@ -29,8 +25,16 @@ module UnauthorizedShouldnt
         assert_can_make_lot false
       end
       
-      should "not be able to make new tree on existing lot" do
+      should "not be able to make new tree" do
         assert_can_make_tree false
+      end
+      
+      should "not be able to edit tree details" do
+        assert_can_edit_tree_details false
+      end
+      
+      should "not be able to edit location" do
+        assert_can_edit_location false
       end
       
     end  
@@ -85,55 +89,112 @@ class TreesTest < ActionController::IntegrationTest
     should "be able to make lot" do 
       assert_can_make_lot
     end
-    should "be able to make new tree on existing lot" do
+    should "be able to make new tree" do
       assert_can_make_tree 
     end
+    
+    should "be able to edit tree details" do
+      assert_can_edit_tree_details 
+    end
+      
+    should "be able to edit location" do
+      assert_can_edit_location 
+    end
+      
   end
   
   
-  
   def assert_can_make_lot can=true
-    get_ok '/lots'
-    assert_has_linkhref can, '/lots/new'
+    get_ok "/trees"
+    url = "/trees/new"
+        assert_has_linkhref can, url
     
-    get "/lots/new"
+    get url
     if !can
       assert_response_denied
       return
     end
     assert_response_ok
-    fill_in :lot_nearest_address, :with => "5 Cowcross St, London"
-    fill_in :postcode, :with => "EC1M 6DW"
-    fill_in :lot_how_to_find, :with => "Slightly to the east of the door. Has a black tag on it"
+    fill_in_location_data
     click_button
     assert_response_ok
     follow_redirect! while redirect?
     assert_select 'p', /.*EC1M 6DW.*/
   end
   
+  
   def assert_can_make_tree can=true
-    lot = Lot.find_by_id(lots(:one).id)
-    get_ok "/lots/#{lot.id}"
-    url = "/trees/new?lot_id=#{lot.id}"
+    get_ok "/trees"
+    url = "/trees/new"
     assert_has_linkhref can, url
     get url
     if !can
       assert_response_denied
       return
     end
-    fill_in :tree_tree_no, :with => "tr423423"
-    fill_in :tree_date_planted_1i, :with => "2009"
-    fill_in :tree_date_planted_1i, :with => "August"
-    fill_in :tree_date_planted_1i, :with => "1"
+        assert_response_ok
+    fill_in_location_data
+    fill_in_tree_data    
     click_button
     assert_response_ok
     follow_redirect! while redirect?
-    
   end
+
+  def assert_can_edit_tree_details can=true
+    tree_id = trees(:one).id
+    get_ok "/trees/#{tree_id}"
+    url = "/trees/#{tree_id}/edit"
+    assert_has_linkhref can, url
+    get url
+    if !can
+      assert_response_denied
+      return
+    end
+    assert_response_ok
+    fill_in_tree_data    
+    click_button
+    assert_response_ok
+    follow_redirect! while redirect?
+    view
+    assert_select "h2", /tr423423/, :count=>1
+  end
+  
+  def assert_can_edit_location can=true
+    tree_id = trees(:one).id
+    get_ok "/trees/#{tree_id}"
+    url = "/trees/#{tree_id}/edit_location"
+    assert_has_linkhref can, url
+    get url
+    if !can
+      assert_response_denied
+      return
+    end
+    assert_response_ok
+    fill_in_location_data    
+    click_button
+    assert_response_ok
+    follow_redirect! while redirect?
+    assert_select "p", /5 Cowcross St/, :count=>1
+  end
+
+  
+  def fill_in_location_data
+    fill_in(:tree_nearest_address, {:with => "5 Cowcross St, London"})
+    fill_in(:postcode, {:with => "EC1M 6DW"})
+    fill_in(:tree_how_to_find, {:with => "Slightly to the east of the door. Has a black tag on it"})
+  end
+  
+  def fill_in_tree_data
+    fill_in(:tree_tree_no, {:with => "tr423423"})
+    fill_in(:tree_date_planted_1i, {:with => "2009"})
+    fill_in(:tree_date_planted_1i, {:with => "August"})
+    fill_in(:tree_date_planted_1i, {:with => "1"})
+  end
+  
   
   def assert_can_make_comment can=true
     #initial_size = Event.all.size
-    get_ok "/lots/#{lots(:one).id}"
+    get_ok "/trees/#{trees(:one).id}"
     assert_select ".comment a[href=/users/#{@logged_in.login}]", :count=>0 if can
     if !can
       assert_select 'form', :count=>0

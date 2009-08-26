@@ -1,9 +1,100 @@
+<div class="grid_6">
+  
+  <h2><%=@page_title = h(@tree) %></h2>
+  <% if  @tree.empty_lot?%>
+    <p>There is no tree here, yet</p>
+  <% else %>
+    <ul class="trees">
+      <%= render @tree%>
+    </ul>
+  <% end %>
+  <% if editor? -%>
+    <p><%= link_to 'Edit tree details', edit_tree_path(@tree) %></p>
+  <% end -%>
+</div>
+
+<div class="grid_10">
+  <h2>Location:</h2>
+  
+  <div id="map" style="width:100%; height:320px;"></div>
+  <%= render :partial => 'trees/map_scripts', :locals=>{:trees=>[@tree]} %>
+      
+  <div class="grid_1 alpha">
+    <% if @tree.empty_lot?-%>
+        <%= image_tag '/images/icons/lot.png'%>
+    <% else -%> 
+        <%= image_tag '/images/icons/tree.png'%>
+    <% end -%>
+  </div>
+  <div class="grid_9 omega">  
+    
+    <div>
+      <p>
+        <b>Nearest Address:</b>
+        <%=h @tree.nearest_address %>
+      </p>
+  
+      <p>
+        <b>Postcode:</b>
+        <%=h @tree.postcode %>
+      </p>
+  
+      <p>
+        <b>How to find it from there:</b>
+        <%=h @tree.how_to_find %>
+      </p>
+      <p>
+        <b>Co-ordinates</b>: Latitude:
+        <%= @tree.lat %>
+         ,  
+         Longditude:
+        <%= @tree.lng %>
+      </p>
+  
+  
+  
+          <% if editor? -%>
+      <p class="options">
+        <%= link_to 'Edit location', edit_location_tree_path(@tree) %>
+      </p>
+      <% end -%>
+    </div>
+
+  
+  </div>
+</div>
+
+
 <div class="grid_16">
-  <h1><%=@page_title = h(@tree)%></h1>
-	<%= render @tree%>
+<h2>Comments</h2>
+<div id="comments">
+<% @tree.comments.each do |comment| %>
+  <div class="comment">
+    <p><%=h(comment.text)%></p>
+    <p class="meta">by <%= link_to h(comment.user), comment.user %>
+    <%= time_ago_in_words(comment.created_at)%> ago</p> 
+  </div>
+<% end %>
+</div>
+<% if logged_in? %>
+  <% form_for([@tree, @comment]) do |form| %>
 
-
-
-  <%= link_to 'Edit', edit_tree_path(@tree) %> |
-  <%= link_to 'Back', trees_path %>
+    <%= form.error_messages %>
+    <p>
+      <%= form.label :text, "Add a new comment" %>
+      <%= form.text_area :text %>
+    </p>
+    
+    <p>
+      <%= form.submit 'Add comment' %>
+    </p>
+  <% end %>
+<% else%>
+  <p>You need to login or sign up to add comments.</p>
+<% end %>
+<% if editor? -%>
+<p class="options">
+  <%= link_to 'Delete this Tree/Lot', @tree, :confirm => 'Are you sure?', :method => :delete %>
+</p>
+<% end -%>
 </div>

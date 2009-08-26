@@ -1,9 +1,22 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
+  nearest_address: MyString
+  how_to_find: MyString
+  postcode: MyString
+  lat: 1.5
+  lng: 1.5
+
   tree_no: MyString
   date_planted: 2009-05-22
 
+
 two:
+  nearest_address: MyString
+  how_to_find: MyString
+  postcode: MyString
+  lat: 1.5
+  lng: 1.5
+
   tree_no: MyString2
   date_planted: 2009-05-23

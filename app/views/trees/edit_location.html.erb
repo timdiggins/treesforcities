@@ -1,9 +1,9 @@
 <div class="grid_16">
-  <h1>Editing tree</h1>
+  <h1>Editing tree location</h1>
 
   <% form_for(@tree) do |form| %>
     <%= form.error_messages %>
-    <%= render :partial=>'tree_fields', :object=>form%>
+    <%= render :partial=>'location_fields', :object=>form%>
     <p>
       <%= form.submit 'Update' %>
 		  <%= link_to 'Cancel', @tree %> |

@@ -1,8 +1,6 @@
 class RootController < ApplicationController
   def homepage
-    @lots = Lot.find :all, :include=>:tree 
-#                :origin=> origin
-#                :within => within
+    @trees = Tree.find :all
   end
 
 end

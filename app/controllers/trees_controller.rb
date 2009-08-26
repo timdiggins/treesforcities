@@ -15,6 +15,7 @@ class TreesController < ApplicationController
   # GET /trees/1.xml
   def show
     @tree = Tree.find(params[:id])
+    @comment = @tree.comments.new
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,13 +26,7 @@ class TreesController < ApplicationController
   # GET /trees/new
   # GET /trees/new.xml
   def new
-    lot_id = params[:lot_id]
-    if lot_id.nil? 
-      raise Exception.new("Tree needs a lot")
-    end
-    lot = Lot.find_by_id(lot_id)
-    raise Exception.new("Can't find lot with id=#{lot_id}") if lot.nil?
-    @tree = lot.build_tree
+    @tree = Tree.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -43,6 +38,10 @@ class TreesController < ApplicationController
   def edit
     @tree = Tree.find(params[:id])
   end
+  # GET /trees/1/edit
+  def edit_location
+    @tree = Tree.find(params[:id])
+  end
 
   # POST /trees
   # POST /trees.xml
@@ -52,7 +51,7 @@ class TreesController < ApplicationController
     respond_to do |format|
       if @tree.save
         flash[:notice] = 'Tree was successfully created.'
-        format.html { redirect_to(lot_path(:id=>@tree.lot_id)) }
+        format.html { redirect_to(@tree) }
         format.xml  { render :xml => @tree, :status => :created, :location => @tree }
       else
         format.html { render :action => "new" }

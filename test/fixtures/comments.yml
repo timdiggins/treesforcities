@@ -1,16 +1,16 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 comment_on_one_by_tim:
-  lot: one
+  tree: one
   text: Useless information
   user: tim
   
 comment_on_one_by_alex:
-  lot: one
+  tree: one
   text: Some more information
   user: alex
 
 comment_on_two_by_alex:
-  lot: two
+  tree: two
   text: My lovely comment
   user: alex

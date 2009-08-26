@@ -1,5 +1,5 @@
 <script type="text/javascript">
-  var lots = <%= lots.to_json(:include=>:tree) %>;
+  var trees = <%= trees.to_json %>;
 </script>
 
 <script type="text/javascript"
@@ -7,7 +7,7 @@
           </script>
         
 
-<%= javascript_include_tag 'lotsmap' %>
+<%= javascript_include_tag 'treesmap' %>
 
 
 <script type="text/javascript">
@@ -17,13 +17,13 @@
 <!--
 <h2>Debugging stuff:</h2>
 <ul>
-<% lots.each do |lot|%>
+<% trees.each do |tree|%>
   <li>
-    <%= link_to"##{lot.id}", lot_path(lot)%>
-    <%= lot.lat%>, <%=lot.lng%>
+    <%= link_to"##{tree.id}", tree_path(tree)%>
+    <%= tree.lat%>, <%=tree.lng%>
   </li>
 <% end %>
 
 </ul>
-  <code>var lots = <%= h(lots.to_json(:include=>:tree)) %>;</code>
+  <code>var trees = <%= h(trees.to_json) %>;</code>
 -->

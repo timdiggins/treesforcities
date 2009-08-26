@@ -4,13 +4,13 @@
   <% form_for(@tree) do |form| %>
     <%= form.error_messages %>
 
-    <%= render :partial=>'form', :object=>form%>
+    <%= render :partial=>'location_fields', :object=>form%>
+    <%= render :partial=>'tree_fields', :object=>form%>
 
-    <%= form.hidden_field :lot_id %>  
     <p>
       <%= form.submit 'Create' %>
+      <%= link_to 'Cancel', trees_path %>
     </p>
   <% end %>
 
-  <%= link_to 'Back', trees_path %>
 </div>

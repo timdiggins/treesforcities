@@ -9,24 +9,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090825103637) do
+ActiveRecord::Schema.define(:version => 20090825214420) do
 
   create_table "comments", :force => true do |t|
-    t.integer  "lot_id"
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-  end
-
-  create_table "lots", :force => true do |t|
-    t.string   "nearest_address"
-    t.string   "how_to_find"
-    t.string   "postcode"
-    t.float    "lat"
-    t.float    "lng"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.integer  "tree_id"
   end
 
   create_table "species", :force => true do |t|
@@ -42,6 +32,11 @@ ActiveRecord::Schema.define(:version => 20090825103637) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "lot_id"
+    t.string   "nearest_address"
+    t.string   "how_to_find"
+    t.string   "postcode"
+    t.float    "lat"
+    t.float    "lng"
   end
 
   create_table "users", :force => true do |t|

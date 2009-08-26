@@ -22,7 +22,7 @@
     <% @user.comments.each do |comment| %>
       <div class="comment">
         <p><%=h(comment.text)%></p>
-        <p class="meta">Comment on <%= link_to comment.lot, comment.lot %> 
+        <p class="meta">Comment on <%= link_to comment.tree, comment.tree %> 
         <%= time_ago_in_words(comment.created_at)%> ago</p> 
       </div>
     <% end %>

@@ -1,12 +1,26 @@
 <div class="grid_16">
-  <h1>Listing trees</h1>
+  <h1>Trees and Empty lots</h1>
 
-  <ul><% @trees.each do |tree| %>
+  <ul class="trees">
+
+  <% @trees.each do |tree| %>
     <li>
-    <h3><%= link_to h(tree), tree%></h3>
-    	<%= render tree%>
+      <% link_to(tree) do-%>
+        <% if tree.empty_lot?-%>
+            <%= image_tag '/images/icons/lot.png'%>
+        <% else -%> 
+            <%= image_tag '/images/icons/tree.png'%>
+        <% end -%>
+      <% end -%>
+        <%= link_to tree, tree %>
+      <%=h tree.nearest_address %>
+      <%=h tree.postcode %>
     </li>
   <% end %>
-
   </ul>
+
+  <% if editor? -%>
+    <p><%= link_to 'New tree', new_tree_path %></p>
+  <% end -%>
+
 </div>

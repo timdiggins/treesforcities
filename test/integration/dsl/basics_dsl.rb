@@ -16,6 +16,8 @@ module BasicsDsl
   end
   
   def login!(login, password = "monkey")
+    login = login.to_s if login.is_a? Symbol
+    login = login.login if login.is_a? User
     login(login, password)
     u = User.find_by_login(login)
     raise Exception.new("User '#{login}' doesn't exist") if u.nil?
