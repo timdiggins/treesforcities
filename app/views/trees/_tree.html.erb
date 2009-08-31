@@ -1,9 +1,13 @@
 <li>
   
+  <% if tree.species %>
+  <p>
+      <%=render tree.species %>
+  </p>
+  <% end -%>
   <p>
     planted: <%=h tree.date_planted %>
   </p>
-
 
 
 </li>

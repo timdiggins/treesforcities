@@ -3,8 +3,13 @@
     <%= tree_fields.label :tree_no %>
     <%= tree_fields.text_field :tree_no %>
   </p>
+	
   <p>
     <%= tree_fields.label :date_planted %>
-    <%= tree_fields.date_select :date_planted %>
-		
+    <%= tree_fields.date_select :date_planted %>		
+  </p>
+
+  <p>
+    <%= tree_fields.label :species %>
+    <%= collection_select(:tree, :species_id, Species.all, :id, :to_s, {:prompt => true}) %>		
   </p>

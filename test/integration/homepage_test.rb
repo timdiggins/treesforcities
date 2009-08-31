@@ -4,15 +4,14 @@ module EveryoneShould
   def self.included(klass)
     klass.class_eval do  
       
-      should "be able to view homepage successfully" do
+      should "be able to see homepage successfully" do
         get("/")
         assert_response_ok
       end      
       
-      should "be able to view home page when no trees" do
+      should "be able to see home page when no trees" do
         Tree.destroy_all
         get_ok '/'
-        view
       end
       
       

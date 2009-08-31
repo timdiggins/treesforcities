@@ -106,7 +106,6 @@ class SpeciesPageTest < ActionController::IntegrationTest
       assert_select 'p', /Brunette/
       assert_select 'p', /brunettus/
       assert_select 'img[src*=oak]', :count=>1
-      view species.common.downcase.split(' ')[0]
     end
   end
 end

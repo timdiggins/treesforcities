@@ -5,14 +5,8 @@
 
   <% @trees.each do |tree| %>
     <li>
-      <% link_to(tree) do-%>
-        <% if tree.empty_lot?-%>
-            <%= image_tag '/images/icons/lot.png'%>
-        <% else -%> 
-            <%= image_tag '/images/icons/tree.png'%>
-        <% end -%>
-      <% end -%>
-        <%= link_to tree, tree %>
+      <%= link_to_tree_image_for(tree) %>
+      <%= link_to tree, tree %>
       <%=h tree.nearest_address %>
       <%=h tree.postcode %>
     </li>

@@ -132,12 +132,14 @@ class TreesTest < ActionController::IntegrationTest
       assert_response_denied
       return
     end
-        assert_response_ok
+    assert_response_ok
     fill_in_location_data
     fill_in_tree_data    
     click_button
     assert_response_ok
     follow_redirect! while redirect?
+    assert_select "p", /Fagus sylvatica/, :count=>1
+
   end
 
   def assert_can_edit_tree_details can=true
@@ -155,8 +157,8 @@ class TreesTest < ActionController::IntegrationTest
     click_button
     assert_response_ok
     follow_redirect! while redirect?
-    view
     assert_select "h2", /tr423423/, :count=>1
+    assert_select "p", /Fagus sylvatica/, :count=>1
   end
   
   def assert_can_edit_location can=true
@@ -186,6 +188,7 @@ class TreesTest < ActionController::IntegrationTest
   
   def fill_in_tree_data
     fill_in(:tree_tree_no, {:with => "tr423423"})
+    fill_in(:tree_species_id, {:with => species(:beech).id})
     fill_in(:tree_date_planted_1i, {:with => "2009"})
     fill_in(:tree_date_planted_1i, {:with => "August"})
     fill_in(:tree_date_planted_1i, {:with => "1"})

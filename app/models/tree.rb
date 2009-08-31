@@ -1,5 +1,6 @@
 class Tree < ActiveRecord::Base
   has_many :comments
+  belongs_to :species
 
   validates_presence_of :lat, :lng
   

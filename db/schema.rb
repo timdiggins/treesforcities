@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090831132206) do
+ActiveRecord::Schema.define(:version => 20090831162554) do
 
   create_table "comments", :force => true do |t|
     t.text     "text"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20090831132206) do
     t.string   "postcode"
     t.float    "lat"
     t.float    "lng"
+    t.integer  "species_id"
   end
 
   create_table "users", :force => true do |t|
