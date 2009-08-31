@@ -37,7 +37,7 @@ class MergeLotsIntoTrees < ActiveRecord::Migration
 #      end
 #    end
     
-    remove_column :comments, :lot_id
+#    remove_column :comments, :lot_id
     drop_table :lots
   end
   
