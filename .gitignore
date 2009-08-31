@@ -11,3 +11,4 @@ db/*.sqlite3
 public/.integration_test*
 doc/localnotes
 config/geokit_for_localhost.yml
+public/species_images

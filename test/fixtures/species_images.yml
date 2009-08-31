@@ -1,0 +1,34 @@
+birch_image:
+  species: birch
+  filename: birchav.png
+  content_type: image/png
+  size: 35557
+  width: 120
+  height: 120
+
+birch_image_small:
+  content_type: image/png
+  filename: birchav_small.png
+  thumbnail: small
+  size: 3859
+  width: 40
+  height: 40
+  parent: birch_image
+
+birch_image_medium:
+  content_type: image/png
+  filename: birchav_medium.png
+  thumbnail: medium
+  size: 24036
+  width: 100
+  height: 100
+  parent: birch_image
+
+birch_image_large:
+  content_type: image/png
+  filename: birchav_large.png
+  thumbnail: large
+  size: 56708
+  width: 160
+  height: 160
+  parent: birch_image

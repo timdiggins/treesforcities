@@ -12,6 +12,13 @@
     <b>Scientific:</b>
     <%=h @species.scientific %>
   </p>
+
+
+  <% if @species.image %>
+	 <p>
+	   	<%= species_image_for(@species, :medium) %>
+	 </p>
+  <% end %>
   
   <% if editor? -%>
 	<p>

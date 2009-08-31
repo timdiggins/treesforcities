@@ -4,8 +4,10 @@
 	<ul id="species" class="species-list">
 	  
 	<% @species.each do |species| %>
-	    <li><%=link_to h(species), species %></li>
-	<% end %>
+	    <li>
+	    	<%= species_image_for(species, :small) %>
+        <%=link_to h(species), species %></li>
+	    <% end %>
 	</ul>
 	
 	<% if editor? %>

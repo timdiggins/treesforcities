@@ -27,7 +27,7 @@ class SpeciesController < ApplicationController
   # GET /species/new.xml
   def new
     @species = Species.new
-
+    @species.image = SpeciesImage.new
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @species }

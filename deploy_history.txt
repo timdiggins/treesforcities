@@ -508,3 +508,24 @@ I deployed the latest. It includes:
 http://tfc.vm.bytemark.co.uk/
 
 ##############################################
+##############################################
+
+Deployment to PRODUCTION (7b34001)
+I deployed the latest. It includes:
+
+* restored full migration  (Tim Diggins)
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################
+##############################################
+
+Deployment to PRODUCTION (7b34001)
+I deployed the latest. It includes:
+
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################

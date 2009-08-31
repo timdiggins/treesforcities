@@ -9,6 +9,13 @@ module EveryoneShould
         assert_response_ok
       end      
       
+      should "be able to view home page when no trees" do
+        Tree.destroy_all
+        get_ok '/'
+        view
+      end
+      
+      
     end
   end
   
@@ -20,7 +27,7 @@ class HomepageTest < ActionController::IntegrationTest
   context "normally" do
     include EveryoneShould  
   end
-
+  
   context "logged in" do
     setup do
       login!(:quentin)

@@ -1,7 +1,7 @@
 <div class="grid_16">
 	<h1>Editing species</h1>
 	
-	<% form_for(@species) do |f| %>
+	<% form_for(@species,:html => { :multipart => true }) do |f| %>
 	  <%= f.error_messages %>
 	
 	  <p>
@@ -12,6 +12,22 @@
 	    <%= f.label :scientific, "Scientific Name" %>
 	    <%= f.text_field :scientific %>
 	  </p>
+		
+
+		<p>
+			<% if @species.image %>
+		      <%= species_image_for(@species, :medium) %>
+		  
+	  <% else %>
+		  <% @species.image = SpeciesImage.new %>
+	  <% end %>
+    <% f.fields_for :image do |image_fields| %>
+	    
+	      <%= image_fields.label :uploaded_data, @species.image.new_record? ? "Choose image" : "Replace image?" %>
+	      <%= image_fields.file_field :uploaded_data %>   
+  <% end -%>
+ </p>
+ 
 	  <p>
 	    <%= f.submit 'Update' %>
       <%= link_to 'Cancel', @species %> 

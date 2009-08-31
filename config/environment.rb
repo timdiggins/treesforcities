@@ -38,6 +38,7 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
+  config.gem "image_science", :version => '1.1.3'
   config.gem "redgreen", :version => '1.2.2' unless ENV['TM_MODE']
   config.gem "colored", :version => '1.1'
   config.gem "geokit"
