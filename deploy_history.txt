@@ -489,3 +489,22 @@ I deployed the latest. It includes:
 http://tfc.vm.bytemark.co.uk/
 
 ##############################################
+##############################################
+
+Deployment to PRODUCTION (fb276ec)
+I deployed the latest. It includes:
+
+* temporarily turning off more of the migration (more oops)  (Tim Diggins)
+* temporarily turning off part of migration (oops).  (Tim Diggins)
+* adding attachment_fu (with my mods)  (Tim Diggins)
+* play nice with cssedit?  (Tim Diggins)
+* merging lots into trees  (Tim Diggins)
+* test changes  (Tim Diggins)
+* test changes  (Tim Diggins)
+* drying up tests nicely  (Tim Diggins)
+* fixing test  (Tim Diggins)
+
+
+http://tfc.vm.bytemark.co.uk/
+
+##############################################
